@@ -3,9 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.12",
+    "@mdx-js/react": "^1.0.21",
+    "@rooks/use-window-size": "^3.0.1",
     "react": "^16.8.6",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-circular-progressbar": "^2.0.1",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-headroom": "^2.2.8",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "react-svg-buttons": "^0.4.0",
+    "react-timer-hook": "^1.1.6",
+    "react-use-scroll-position": "^2.0.0",
+    "theme-ui": "^0.1.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -16,16 +28,5 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "browserslist": []
 }

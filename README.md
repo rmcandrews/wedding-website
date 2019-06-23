@@ -66,3 +66,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Components Used
+
+- [Theme UI](https://github.com/system-ui/theme-ui)
+- [Headroom](https://kyleamathews.github.io/react-headroom/)
+- [React SVG Buttons](https://github.com/plouc/react-svg-buttons)
