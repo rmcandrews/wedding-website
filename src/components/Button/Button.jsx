@@ -23,7 +23,16 @@ const sizes = {
   }
 };
 
-const Button = ({ color, hoverColor, size, type, csss, style }) => {
+const Button = ({
+  color,
+  hoverColor,
+  size,
+  type,
+  csss,
+  style,
+  children,
+  onClick
+}) => {
   const [isHovering, setIsHovering] = useState(false);
 
   if (!size) size = "small";
@@ -65,10 +74,11 @@ const Button = ({ color, hoverColor, size, type, csss, style }) => {
     <button
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onClick={onClick}
       css={{ fontWeight: "semibold", fontFamily: "sansSerif", ...csss }}
       style={finalStyle}
     >
-      RSVP
+      {children}
     </button>
   );
 };

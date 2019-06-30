@@ -26,7 +26,7 @@ function Header() {
   return (
     <Headroom
       style={{
-        backgroundColor: `rgba(0,0,0,${Math.min((scrollY * 4) / 100, 0.99)}`
+        backgroundColor: `rgba(0,0,0,${Math.min((scrollY * 4) / 100, 0.6)}`
       }}
     >
       <header
@@ -59,7 +59,7 @@ function Header() {
                   <Link to="/">WEDDING</Link>
                 </li>
                 <li style={lgMenuItemStyle}>
-                  <Link to="/travel">TRAVEL</Link>
+                  <Link to="/location">LOCATION</Link>
                 </li>
                 <li style={lgMenuItemStyle}>REGISTRY</li>
               </ul>
@@ -71,7 +71,9 @@ function Header() {
             type="ghost"
             color="white"
             hoverColor="#e8ca6f"
-          />
+          >
+            RSVP
+          </Button>
           <MorphIcon
             style={{
               position: "fixed",
@@ -119,13 +121,17 @@ function Header() {
                       className="menu-list-item"
                       style={{ animationDelay: "0.1s" }}
                     >
-                      WEDDING
+                      <Link to="/" onClick={() => setMenuOpen(false)}>
+                        WEDDING
+                      </Link>
                     </li>
                     <li
                       className="menu-list-item"
                       style={{ animationDelay: "0.2s" }}
                     >
-                      LOCATION
+                      <Link to="/location" onClick={() => setMenuOpen(false)}>
+                        LOCATION
+                      </Link>
                     </li>
                     <li
                       className="menu-list-item"
@@ -137,11 +143,9 @@ function Header() {
                       className="menu-list-item"
                       style={{ animationDelay: "0.3s" }}
                     >
-                      <Button
-                        type="fill"
-                        color="#e8ca6f"
-                        hoverColor="#e8ca6f"
-                      />
+                      <Button type="fill" color="#e8ca6f" hoverColor="#e8ca6f">
+                        RSVP
+                      </Button>
                     </li>
                   </ul>
                 </nav>

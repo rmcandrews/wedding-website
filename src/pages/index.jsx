@@ -1,4 +1,4 @@
 import { WeddingPage } from "./Wedding";
-import { TravelPage } from "./Travel";
+import { LocationPage } from "./Location";
 
-export { WeddingPage, TravelPage };
+export { WeddingPage, LocationPage };

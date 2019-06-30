@@ -23,7 +23,7 @@ a {
 /* react-circular-progressbar overrides */
 .CircularProgressbar .CircularProgressbar-path {
   stroke-linecap: butt !important;
-  stroke: #e8ca6f !important;
+  stroke: white !important;
 }
 
 .CircularProgressbar .CircularProgressbar-trail {
@@ -31,7 +31,7 @@ a {
 }
 
 .CircularProgressbar .CircularProgressbar-text {
-  fill: #e8ca6f !important;
+  fill: white !important;
 }
 
 .page {
@@ -93,5 +93,71 @@ a {
   }
   100% {
     opacity: 1;
+  }
+}
+
+.video-background {
+  background: #000;
+  position: absolute;
+  top: 0;
+  height: 500px;
+  width: 100%;
+  z-index: -99;
+}
+.video-background::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.video-foreground {
+  height: 300%;
+  top: -104%;
+}
+
+.scroll-indicator {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: bounce;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-10px);
+  }
+  50% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(-3px);
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
   }
 }

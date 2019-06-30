@@ -14,7 +14,7 @@ const circleCss = {
 };
 
 const Countdown = ({ style }) => {
-  const expiryTimestamp = new Date("06/01/2020 15:37 UTC-5").getTime();
+  const expiryTimestamp = new Date("07/25/2020 15:00 UTC-5").getTime();
   const { minutes, hours, days } = useTimer({
     expiryTimestamp
   });
@@ -22,13 +22,14 @@ const Countdown = ({ style }) => {
   return (
     <div style={{ ...style }}>
       <div css={circleCss}>
-        <CircularProgressbar value={(days / 365) * 100} text={days} />;
+        <CircularProgressbar value={(days / 365) * 100} text={`${days}`} />;
       </div>
       <div css={circleCss}>
-        <CircularProgressbar value={(hours / 24) * 100} text={hours} />;
+        <CircularProgressbar value={(hours / 24) * 100} text={`${hours}`} />;
       </div>
       <div css={circleCss}>
-        <CircularProgressbar value={(minutes / 60) * 100} text={minutes} />;
+        <CircularProgressbar value={(minutes / 60) * 100} text={`${minutes}`} />
+        ;
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { ThemeProvider } from "theme-ui";
 import theme from "./theme";
 
 import { Header } from "./components";
-import { WeddingPage, TravelPage } from "./pages";
+import { WeddingPage, LocationPage } from "./pages";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Header />
         <Route exact path="/" component={WeddingPage} />
-        <Route path="/travel" component={TravelPage} />
+        <Route path="/location" component={LocationPage} />
         <Route path="/registry" component={RSVPPage} />
       </ThemeProvider>
     </Router>
