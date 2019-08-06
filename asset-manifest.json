@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/wedding-website/static/css/main.bca21b27.chunk.css",
-    "main.js": "/wedding-website/static/js/main.95c08465.chunk.js",
-    "main.js.map": "/wedding-website/static/js/main.95c08465.chunk.js.map",
-    "runtime~main.js": "/wedding-website/static/js/runtime~main.88091616.js",
-    "runtime~main.js.map": "/wedding-website/static/js/runtime~main.88091616.js.map",
-    "static/css/2.bd39f990.chunk.css": "/wedding-website/static/css/2.bd39f990.chunk.css",
-    "static/js/2.1f812b2e.chunk.js": "/wedding-website/static/js/2.1f812b2e.chunk.js",
-    "static/js/2.1f812b2e.chunk.js.map": "/wedding-website/static/js/2.1f812b2e.chunk.js.map",
-    "index.html": "/wedding-website/index.html",
-    "precache-manifest.8b71eae7ab5fbc0b8e04d55bbdb6468b.js": "/wedding-website/precache-manifest.8b71eae7ab5fbc0b8e04d55bbdb6468b.js",
-    "service-worker.js": "/wedding-website/service-worker.js",
-    "static/css/2.bd39f990.chunk.css.map": "/wedding-website/static/css/2.bd39f990.chunk.css.map",
-    "static/css/main.bca21b27.chunk.css.map": "/wedding-website/static/css/main.bca21b27.chunk.css.map"
+    "main.css": "/static/css/main.bca21b27.chunk.css",
+    "main.js": "/static/js/main.d2132748.chunk.js",
+    "main.js.map": "/static/js/main.d2132748.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.bd39f990.chunk.css": "/static/css/2.bd39f990.chunk.css",
+    "static/js/2.1f812b2e.chunk.js": "/static/js/2.1f812b2e.chunk.js",
+    "static/js/2.1f812b2e.chunk.js.map": "/static/js/2.1f812b2e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.990697566c7da27d70c9cdbffade8597.js": "/precache-manifest.990697566c7da27d70c9cdbffade8597.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.bd39f990.chunk.css.map": "/static/css/2.bd39f990.chunk.css.map",
+    "static/css/main.bca21b27.chunk.css.map": "/static/css/main.bca21b27.chunk.css.map"
   }
 }
