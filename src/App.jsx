@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { ThemeProvider } from "theme-ui";
 import theme from "./theme";
 
@@ -8,7 +8,7 @@ import { WeddingPage, LocationPage } from "./pages";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <ThemeProvider theme={theme}>
         <Header />
         <Route exact path="/" component={WeddingPage} />
