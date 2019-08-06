@@ -220,7 +220,7 @@ function WeddingPage() {
             }}
             style={{ marginLeft: 5 }}
           >
-            <i class="fab fa-uber" /> UBER
+            <i className="fab fa-uber" /> UBER
           </Button>
         </div>
       </section>
@@ -317,7 +317,7 @@ function WeddingPage() {
             }}
             style={{ marginLeft: 5 }}
           >
-            <i class="fab fa-uber" /> UBER
+            <i className="fab fa-uber" /> UBER
           </Button>
         </div>
       </section>
