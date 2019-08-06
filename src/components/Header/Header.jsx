@@ -23,6 +23,14 @@ function Header() {
 
   let mobileHeaderPadding = Math.min(40 - Math.min(scrollY, 20), 40);
   let headerPadding = Math.min(50 - Math.min(scrollY, 20), 50);
+
+  let logoTop;
+  if (innerWidth >= 640) {
+    logoTop = Math.min(20 - Math.min(scrollY, 20), 20);
+  } else {
+    logoTop = Math.min(15 - Math.min(scrollY, 25), 15);
+  }
+
   return (
     <Headroom
       style={{
@@ -45,7 +53,9 @@ function Header() {
         }}
       >
         <div>
-          <div style={dib}>TAYA & RYAN</div>
+          <div style={{ position: "absolute", top: logoTop }}>
+            <img alt="logo" src="img/logo.png" height="75px" />
+          </div>
           <div style={dib}>
             <nav css={{ display: ["none", "none", "block"] }}>
               <ul
