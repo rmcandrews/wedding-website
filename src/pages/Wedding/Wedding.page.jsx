@@ -101,7 +101,7 @@ function WeddingPage() {
             >
               <img
                 alt="taya"
-                src="img/taya.jpg"
+                src="img/taya2.jpg"
                 width="80%"
                 style={{ marginBottom: 10 }}
               />
