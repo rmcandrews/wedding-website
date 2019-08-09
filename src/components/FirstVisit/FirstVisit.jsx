@@ -126,6 +126,51 @@ const FirstVisit = ({ opacity }) => {
         opacity
       }}
     >
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          height: 120,
+          width: 120,
+          borderRadius: "50%",
+          boxShadow: "inset 0 0 0 2px rgba(255,255,255,.2)",
+          marginLeft: "-60px",
+          marginTop: "-60px"
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          width: "60px",
+          height: "120px",
+          marginLeft: "-60px",
+          marginTop: "-60px",
+          overflow: "hidden",
+          WebkitTransformOrigin: "60px 60px",
+          MozTransformOrigin: "60px 60px",
+          MsTransformOrigin: "60px 60px",
+          OTransformOrigin: "60px 60px",
+          transformOrigin: "60px 60px",
+          WebkitMaskImage:
+            "-webkit-linear-gradient(top, #000000, rgba(0, 0, 0, 0))",
+          WebkitAnimation: "rotate 1.2s infinite linear",
+          MozAnimation: "rotate 1.2s infinite linear",
+          OAnimation: "rotate 1.2s infinite linear",
+          animation: "rotate 1.2s infinite linear"
+        }}
+      >
+        <div
+          style={{
+            width: "120px",
+            height: "120px",
+            borderRadius: "50%",
+            boxShadow: "inset 0 0 0 2px rgba(255, 255, 255, 0.5)"
+          }}
+        />
+      </div>
       <Particles
         style={{
           marginTop: -innerWidth * 0.2,
