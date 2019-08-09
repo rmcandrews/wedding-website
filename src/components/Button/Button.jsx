@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { isMobile } from "react-device-detect";
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
@@ -52,7 +53,7 @@ const Button = ({
   };
 
   const onMouseEnter = () => {
-    setIsHovering(true);
+    setIsHovering(!isMobile);
   };
 
   const onMouseLeave = () => {

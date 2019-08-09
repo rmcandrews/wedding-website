@@ -3,6 +3,7 @@ import { jsx } from "theme-ui";
 import { Button, Countdown, Footer } from "../../components";
 import FaMap from "react-icons/lib/fa/map";
 import FaAngleDown from "react-icons/lib/fa/angle-down";
+import { isMobile } from "react-device-detect";
 
 const detailContainerCss = {
   display: "inline-block",
@@ -26,6 +27,8 @@ const detailContentCss = {
 };
 
 function WeddingPage() {
+  let mapAndUberLinkTarget = !isMobile ? "_blank" : "_self";
+
   return (
     <div className="page">
       <section
@@ -203,7 +206,7 @@ function WeddingPage() {
             onClick={() => {
               window.open(
                 "https://www.google.com/maps/place/Queen+of+All+Saints+Basilica/@41.9954372,-87.7468087,17z/data=!3m1!4b1!4m5!3m4!1s0x880fce8d2001307f:0xbc6e8ed0ef34e0fc!8m2!3d41.9954372!4d-87.74462",
-                "_newtab"
+                mapAndUberLinkTarget
               );
             }}
             style={{ marginRight: 5 }}
@@ -215,7 +218,7 @@ function WeddingPage() {
             onClick={() => {
               window.open(
                 "https://m.uber.com/ul/?action=setPickup&client_id=xHi2Lo0Eu_rfUeCrxghCA8jKjWULjNAp&pickup=my_location&dropoff[formatted_address]=Queen%20of%20All%20Saints%20Basilica%2C%20North%20Sauganash%20Avenue%2C%20Chicago%2C%20IL%2C%20USA&dropoff[latitude]=41.995437&dropoff[longitude]=-87.744620",
-                "_newtab"
+                mapAndUberLinkTarget
               );
             }}
             style={{ marginLeft: 5 }}
@@ -300,7 +303,7 @@ function WeddingPage() {
             onClick={() => {
               window.open(
                 "https://www.google.com/maps/place/838+W+Kinzie+St,+Chicago,+IL+60642/@41.889282,-87.6512327,17z/data=!3m1!4b1!4m5!3m4!1s0x880e2cd1c3af1c43:0xfcce64686d814594!8m2!3d41.889278!4d-87.649044",
-                "_newtab"
+                mapAndUberLinkTarget
               );
             }}
             style={{ marginRight: 5 }}
@@ -312,7 +315,7 @@ function WeddingPage() {
             onClick={() => {
               window.open(
                 "https://m.uber.com/ul/?action=setPickup&client_id=xHi2Lo0Eu_rfUeCrxghCA8jKjWULjNAp&pickup=my_location&dropoff[formatted_address]=838%20West%20Kinzie%20Street%2C%20Chicago%2C%20IL%2C%20USA&dropoff[latitude]=41.889278&dropoff[longitude]=-87.649044",
-                "_newtab"
+                mapAndUberLinkTarget
               );
             }}
             style={{ marginLeft: 5 }}

@@ -10,6 +10,7 @@
     "react": "^16.8.6",
     "react-addons-css-transition-group": "^15.6.2",
     "react-circular-progressbar": "^2.0.1",
+    "react-device-detect": "^1.7.5",
     "react-dom": "^16.8.6",
     "react-headroom": "^2.2.8",
     "react-hero-video": "^0.1.1",
