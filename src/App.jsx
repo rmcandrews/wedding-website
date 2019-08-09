@@ -15,25 +15,31 @@ function App() {
     localStorage.getItem("hasVisited")
   );
   const [loadScreenOpacity, setLoadScreenOpacity] = useState(1);
+  const [firstLoad, setFirstLoad] = useState(true);
 
-  setTimeout(function() {
-    localStorage.setItem("hasVisited", true);
-    setHasVisited(true);
-  }, 3000);
-
-  let loadFadeDelay = 2000;
-  let loadFadeRate = 0.05;
   if (!hasVisited) {
-    loadFadeDelay = 5000;
-    loadFadeRate = 0.01;
+    setTimeout(function() {
+      localStorage.setItem("hasVisited", true);
+      setHasVisited(true);
+    }, 3000);
   }
 
-  setTimeout(function() {
-    interval = setInterval(function() {
-      loadScreenOpacityTracker -= loadFadeRate;
-      setLoadScreenOpacity(loadScreenOpacityTracker);
-    }, 25);
-  }, loadFadeDelay);
+  if (firstLoad) {
+    let loadFadeDelay = 5000;
+    let loadFadeRate = 0.1;
+    if (!hasVisited) {
+      loadFadeDelay = 10000;
+      loadFadeRate = 0.05;
+    }
+
+    setTimeout(function() {
+      interval = setInterval(function() {
+        loadScreenOpacityTracker -= loadFadeRate;
+        setLoadScreenOpacity(loadScreenOpacityTracker);
+      }, 50);
+    }, loadFadeDelay);
+    setFirstLoad(false);
+  }
 
   if (loadScreenOpacity <= 0) clearInterval(interval);
   return (

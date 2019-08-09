@@ -5,7 +5,7 @@ import useWindowSize from "@rooks/use-window-size";
 const particleParameters = {
   particles: {
     number: {
-      value: 80,
+      value: 100,
       density: {
         enable: true,
         value_area: 800
@@ -22,11 +22,6 @@ const particleParameters = {
       },
       polygon: {
         nb_sides: 5
-      },
-      image: {
-        src: "img/github.svg",
-        width: 100,
-        height: 100
       }
     },
     opacity: {
@@ -58,7 +53,7 @@ const particleParameters = {
     },
     move: {
       enable: true,
-      speed: 2,
+      speed: 1,
       direction: "none",
       random: false,
       straight: false,
