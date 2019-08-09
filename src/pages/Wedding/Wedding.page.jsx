@@ -136,7 +136,7 @@ function WeddingPage() {
       <section
         css={{
           minHeight: [400, 450, 500],
-          background: "url('img/queens.jpg') center center"
+          background: "url('img/wedding.jpg') center center"
         }}
         style={{
           backgroundSize: "cover"
@@ -146,7 +146,7 @@ function WeddingPage() {
           css={{ height: [400, 450, 500] }}
           style={{
             width: "100%",
-            backgroundColor: "rgba(0,0,0,0.7)",
+            backgroundColor: "rgba(0,0,0,0.5)",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -227,7 +227,7 @@ function WeddingPage() {
       <section
         css={{
           minHeight: [400, 450, 500],
-          background: "url('img/reception.webp') center center"
+          background: "url('img/reception.jpg') center center"
         }}
         style={{
           backgroundSize: "cover"
@@ -237,7 +237,7 @@ function WeddingPage() {
           css={{ height: [400, 450, 500] }}
           style={{
             width: "100%",
-            backgroundColor: "rgba(0,0,0,0.7)",
+            backgroundColor: "rgba(0,0,0,0.5)",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
