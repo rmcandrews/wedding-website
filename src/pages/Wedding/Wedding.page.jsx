@@ -4,6 +4,9 @@ import { Button, Countdown, Footer } from "../../components";
 import FaMap from "react-icons/lib/fa/map";
 import FaAngleDown from "react-icons/lib/fa/angle-down";
 import { isMobile } from "react-device-detect";
+import { Parallax } from "react-parallax";
+
+import coverImage from "./cover.jpg";
 
 const detailContainerCss = {
   display: "inline-block",
@@ -31,35 +34,43 @@ function WeddingPage() {
 
   return (
     <div className="page">
-      <section
-        css={{ minHeight: [550, 750, 800] }}
-        style={{
-          background: "url('img/IMG_5592.JPG') center center",
-          backgroundSize: "cover"
+      <Parallax
+        strength={0}
+        bgImage={coverImage}
+        bgImageStyle={{
+          objectFit: "cover",
+          objectPosition: "center center"
         }}
       >
-        <div
-          style={{ textAlign: "center", width: "100%" }}
-          css={{ paddingTop: [350, 475, 500] }}
-        >
-          <Countdown />
-          <Button type="fill" size="large" color="#e8ca6f" hoverColor="#e8ca6f">
-            RSVP
-          </Button>
+        <section css={{ minHeight: [550, 750, 800] }}>
           <div
-            style={{
-              textAlign: "center",
-              width: "100%",
-              padding: "10px 0",
-              color: "white",
-              fontSize: 30
-            }}
-            className="scroll-indicator"
+            style={{ textAlign: "center", width: "100%" }}
+            css={{ paddingTop: [350, 475, 500] }}
           >
-            <FaAngleDown />
+            <Countdown />
+            <Button
+              type="fill"
+              size="large"
+              color="#e8ca6f"
+              hoverColor="#e8ca6f"
+            >
+              RSVP
+            </Button>
+            <div
+              style={{
+                textAlign: "center",
+                width: "100%",
+                padding: "10px 0",
+                color: "white",
+                fontSize: 30
+              }}
+              className="scroll-indicator"
+            >
+              <FaAngleDown />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Parallax>
       <section>
         <div
           style={{ textAlign: "center", fontSize: 30 }}
@@ -136,36 +147,37 @@ function WeddingPage() {
           </div>
         </div>
       </section>
-      <section
-        css={{
-          minHeight: [400, 450, 500],
-          background: "url('img/wedding.jpg') center center"
-        }}
-        style={{
-          backgroundSize: "cover"
-        }}
+      <Parallax
+        strength={200}
+        bgImage={require("./wedding.jpg")}
+        style={{ marginTop: 50 }}
       >
         <div
-          css={{ height: [400, 450, 500] }}
-          style={{
-            width: "100%",
-            backgroundColor: "rgba(0,0,0,0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 50
+          css={{
+            minHeight: [400, 450, 500]
           }}
         >
-          <div style={{ color: "white", textAlign: "center" }}>
-            <div css={{ fontSize: [30, 40, 50], fontWeight: "normal" }}>
-              CEREMONY
-            </div>
-            <div css={{ fontSize: [16, 22, 28], fontWeight: "light" }}>
-              HERE COMES THE BRIDE
+          <div
+            css={{ height: [400, 450, 500] }}
+            style={{
+              width: "100%",
+              backgroundColor: "rgba(0,0,0,0.5)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <div style={{ color: "white", textAlign: "center" }}>
+              <div css={{ fontSize: [30, 40, 50], fontWeight: "normal" }}>
+                CEREMONY
+              </div>
+              <div css={{ fontSize: [16, 22, 28], fontWeight: "light" }}>
+                HERE COMES THE BRIDE
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </Parallax>
       <section style={{ textAlign: "center" }}>
         <div
           style={{
@@ -227,36 +239,41 @@ function WeddingPage() {
           </Button>
         </div>
       </section>
-      <section
-        css={{
-          minHeight: [400, 450, 500],
-          background: "url('img/reception.jpg') center center"
-        }}
-        style={{
-          backgroundSize: "cover"
-        }}
+      <Parallax
+        strength={200}
+        blur={0}
+        bgImage={require("./reception.jpg")}
+        style={{ marginTop: 50 }}
       >
-        <div
-          css={{ height: [400, 450, 500] }}
+        <section
+          css={{
+            minHeight: [400, 450, 500]
+          }}
           style={{
-            width: "100%",
-            backgroundColor: "rgba(0,0,0,0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 50
+            backgroundSize: "cover"
           }}
         >
-          <div style={{ color: "white", textAlign: "center" }}>
-            <div css={{ fontSize: [30, 40, 50], fontWeight: "normal" }}>
-              RECEPTION
-            </div>
-            <div css={{ fontSize: [16, 22, 28], fontWeight: "light" }}>
-              PARTY TIME
+          <div
+            css={{ height: [400, 450, 500] }}
+            style={{
+              width: "100%",
+              backgroundColor: "rgba(0,0,0,0.5)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <div style={{ color: "white", textAlign: "center" }}>
+              <div css={{ fontSize: [30, 40, 50], fontWeight: "normal" }}>
+                RECEPTION
+              </div>
+              <div css={{ fontSize: [16, 22, 28], fontWeight: "light" }}>
+                PARTY TIME
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Parallax>
       <section style={{ textAlign: "center" }}>
         <div
           style={{

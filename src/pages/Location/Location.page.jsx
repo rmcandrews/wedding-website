@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui";
 import FaAngleDown from "react-icons/lib/fa/angle-down";
 import { Footer } from "../../components";
+import { Parallax } from "react-parallax";
 
 const detailContainerCss = {
   display: "inline-block",
@@ -114,35 +115,37 @@ function LocationPage() {
           </div>
         </div>
       </section>
-      <section
-        css={{
-          minHeight: [400, 450, 500],
-          background: "url('img/hotel.jpg') center center"
-        }}
-        style={{
-          backgroundSize: "cover"
-        }}
+      <Parallax
+        strength={200}
+        bgImage={require("./hotel.jpg")}
+        style={{ marginTop: 50 }}
       >
-        <div
-          css={{ height: [400, 450, 500] }}
-          style={{
-            width: "100%",
-            backgroundColor: "rgba(0,0,0,0.3)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
+        <section
+          css={{
+            minHeight: [400, 450, 500]
           }}
         >
-          <div style={{ color: "white", textAlign: "center" }}>
-            <div css={{ fontSize: [30, 40, 50], fontWeight: "normal" }}>
-              WHERE TO STAY
-            </div>
-            <div css={{ fontSize: [16, 22, 28], fontWeight: "light" }}>
-              HOTELS
+          <div
+            css={{ height: [400, 450, 500] }}
+            style={{
+              width: "100%",
+              backgroundColor: "rgba(0,0,0,0.3)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <div style={{ color: "white", textAlign: "center" }}>
+              <div css={{ fontSize: [30, 40, 50], fontWeight: "normal" }}>
+                WHERE TO STAY
+              </div>
+              <div css={{ fontSize: [16, 22, 28], fontWeight: "light" }}>
+                HOTELS
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Parallax>
       <section>
         <div
           style={{
@@ -190,33 +193,37 @@ function LocationPage() {
           </div>
         </div>
       </section>
-      <section
-        css={{
-          minHeight: [400, 450, 500],
-          background: "url('img/what-to-do.jpg') center center"
-        }}
-        style={{
-          backgroundSize: "cover"
-        }}
+      <Parallax
+        strength={200}
+        bgImage={require("./what-to-do.jpg")}
+        style={{ marginTop: 50 }}
       >
-        <div
-          css={{ height: [400, 450, 500] }}
-          style={{
-            width: "100%",
-            backgroundColor: "rgba(0,0,0,0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
+        <section
+          css={{
+            minHeight: [400, 450, 500]
           }}
         >
-          <div style={{ color: "white", textAlign: "center" }}>
-            <div css={{ fontSize: [30, 40, 50], fontWeight: "normal" }}>
-              WHAT TO DO
+          <div
+            css={{ height: [400, 450, 500] }}
+            style={{
+              width: "100%",
+              backgroundColor: "rgba(0,0,0,0.5)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <div style={{ color: "white", textAlign: "center" }}>
+              <div css={{ fontSize: [30, 40, 50], fontWeight: "normal" }}>
+                WHAT TO DO
+              </div>
+              <div css={{ fontSize: [16, 22, 28], fontWeight: "light" }}>
+                FUN
+              </div>
             </div>
-            <div css={{ fontSize: [16, 22, 28], fontWeight: "light" }}>FUN</div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Parallax>
       <section>
         <div
           style={{
@@ -251,10 +258,11 @@ function LocationPage() {
                 width: ["100%", "100%", "100%", "33.33%"]
               }}
             >
-              <div style={detailTitleStyle}>WOW SUCH FUN</div>
+              <div style={detailTitleStyle}>PARKS</div>
               <div style={detailContentStyle} css={detailContentCss}>
-                Cras ut sem mi. Phasellus vitae turpis sagittis, vulputate nibh
-                id, condimentum libero. Proin ut justo massa.
+                Go to Millenium Park to see "The Bean". See Buckingham Fountain
+                or sit along the lake front in Grant Park. Head up to Lincoln
+                Park to take a walk through the free zoo.
               </div>
             </div>
             <div
@@ -263,10 +271,19 @@ function LocationPage() {
                 width: ["100%", "100%", "100%", "33.33%"]
               }}
             >
-              <div style={detailTitleStyle}>SO MUCH FUN</div>
+              <div style={detailTitleStyle}>ARCHITECTURE TOUR</div>
               <div style={detailContentStyle} css={detailContentCss}>
-                Sed feugiat sit amet justo a dignissim. Duis vulputate nisi in
-                quam facilisis, vitae commodo augue tempus.
+                Experience one of the world’s most beautiful cities on the
+                historic Chicago River. Consitently rated one of the top things
+                to do in Chicago.
+                <br />
+                <a
+                  href="https://www.architecture.org/tours/detail/chicago-architecture-foundation-center-river-cruise-aboard-chicagos-first-lady/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  www.architecture.org
+                </a>
               </div>
             </div>
             <div
