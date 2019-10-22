@@ -118,5 +118,17 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script src="https://kit.fontawesome.com/14988ed189.js"></script>
+    <script>
+      !(function(e, t, n) {
+        var s,
+          a = e.getElementsByTagName(t)[0];
+        e.getElementById(n) ||
+          ((s = e.createElement(t)),
+          (s.id = n),
+          (s.async = !0),
+          (s.src = "https://widget.zola.com/js/widget.js"),
+          a.parentNode.insertBefore(s, a));
+      })(document, "script", "zola-wjs");
+    </script>
   </body>
 </html>

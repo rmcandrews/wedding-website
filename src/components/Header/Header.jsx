@@ -71,7 +71,9 @@ function Header() {
                 <li style={lgMenuItemStyle}>
                   <Link to="/location">LOCATION</Link>
                 </li>
-                <li style={lgMenuItemStyle}>REGISTRY</li>
+                <li style={lgMenuItemStyle}>
+                  <Link to="/registry">REGISTRY</Link>
+                </li>
               </ul>
             </nav>
           </div>

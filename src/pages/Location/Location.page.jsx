@@ -8,6 +8,7 @@ const detailContainerCss = {
   display: "inline-block",
   verticalAlign: "top",
   width: ["100%", "100%", "100%", "50%"],
+  marginBottom: ["1rem", "1rem", "1rem", "0rem"],
   fontWeight: 300,
   marginTop: [25, 25, 25, 0]
 };
@@ -218,7 +219,7 @@ function LocationPage() {
                 WHAT TO DO
               </div>
               <div css={{ fontSize: [16, 22, 28], fontWeight: "light" }}>
-                FUN
+                EXPLORA LIKE DORA
               </div>
             </div>
           </div>
@@ -234,14 +235,17 @@ function LocationPage() {
           }}
           css={{
             fontWeight: 200,
-            marginLeft: ["10%", "20%", "30%"],
-            marginRight: ["10%", "20%", "30%"]
+            marginLeft: ["10%", "20%", "20%"],
+            marginRight: ["10%", "20%", "20%"],
+            lineHeight: [1.5]
           }}
         >
-          Donec nulla ante, efficitur sit amet gravida et, dignissim ut enim.
-          Quisque at diam vel nisl vestibulum imperdiet consectetur efficitur
-          sapien. Maecenas at dolor ut purus imperdiet egestas. Donec sed
-          sagittis lacus, sit amet finibus mi.
+          Chicago is a city unlike any other. It has architectural marvels,
+          world-class museums, dynamic entertainment, and award-winning dining
+          scene you’d expect from one of the world’s greatest cities. But it's
+          more than just another big city — our welcoming residents, inclusive
+          neighborhoods, and Midwestern soul truly make Chicago the city that
+          feels like home.
         </div>
         <div
           style={{
@@ -260,9 +264,29 @@ function LocationPage() {
             >
               <div style={detailTitleStyle}>PARKS</div>
               <div style={detailContentStyle} css={detailContentCss}>
-                Go to Millenium Park to see "The Bean". See Buckingham Fountain
-                or sit along the lake front in Grant Park. Head up to Lincoln
-                Park to take a walk through the free zoo.
+                The Chicago Park District owns more than 8800 acres of green
+                space, making it the largest municipal park manager in the
+                nation. Go to Millenium Park to see "The Bean". See Buckingham
+                Fountain or sit along the lake front in Grant Park. Head up to
+                Lincoln Park to take a walk through the free zoo.
+                <br />
+                <a
+                  href="https://www.chicagoparkdistrict.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#e8ca6f" }}
+                >
+                  www.chicagoparkdistrict.com
+                </a>
+                <br />
+                <a
+                  href="https://www.lpzoo.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#e8ca6f" }}
+                >
+                  www.lpzoo.org
+                </a>
               </div>
             </div>
             <div
@@ -273,14 +297,17 @@ function LocationPage() {
             >
               <div style={detailTitleStyle}>ARCHITECTURE TOUR</div>
               <div style={detailContentStyle} css={detailContentCss}>
-                Experience one of the world’s most beautiful cities on the
-                historic Chicago River. Consitently rated one of the top things
-                to do in Chicago.
+                Chicago is known around the world for its architecture. Whether
+                you tour downtown or a neighborhood, our expert docent guides
+                will tell you the stories behind the buildings. Visit iconic
+                skyscrapers, elegant hotels or the legendary houses of Frank
+                Lloyd Wright.
                 <br />
                 <a
                   href="https://www.architecture.org/tours/detail/chicago-architecture-foundation-center-river-cruise-aboard-chicagos-first-lady/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  style={{ color: "#e8ca6f" }}
                 >
                   www.architecture.org
                 </a>
@@ -292,11 +319,48 @@ function LocationPage() {
                 width: ["100%", "100%", "100%", "33.33%"]
               }}
             >
-              <div style={detailTitleStyle}>THE MOST FUN</div>
+              <div style={detailTitleStyle}>MUSEUMS</div>
               <div style={detailContentStyle} css={detailContentCss}>
-                Nullam ut semper nisl. Praesent volutpat suscipit blandit.
-                Vivamus cursus consequat risus, non laoreet neque aliquam at.
-                Vivamus eget urna lacus.
+                Explore ancient Egyptian tombs, underwater worlds, Impressionist
+                masterpieces, the depths of space, and beyond. From major
+                exhibits to neighborhood cultural attractions, there’s a whole
+                world to explore at Chicago’s renowned museums.
+                <br />
+                <a
+                  href="https://www.fieldmuseum.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#e8ca6f" }}
+                >
+                  www.fieldmuseum.org
+                </a>
+                <br />
+                <a
+                  href="https://www.sheddaquarium.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#e8ca6f" }}
+                >
+                  www.sheddaquarium.org
+                </a>
+                <br />
+                <a
+                  href="https://www.artic.edu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#e8ca6f" }}
+                >
+                  www.artic.edu
+                </a>
+                <br />
+                <a
+                  href="https://www.adlerplanetarium.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#e8ca6f" }}
+                >
+                  www.adlerplanetarium.org
+                </a>
               </div>
             </div>
           </div>
