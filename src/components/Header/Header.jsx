@@ -149,7 +149,9 @@ function Header() {
                       className="menu-list-item"
                       style={{ animationDelay: "0.3s" }}
                     >
-                      REGISTRY
+                      <Link to="/registry" onClick={() => setMenuOpen(false)}>
+                        REGISTRY
+                      </Link>
                     </li>
                     <li
                       className="menu-list-item"
