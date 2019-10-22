@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FirstVisit } from "./components";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import { ThemeProvider } from "theme-ui";
 import theme from "./theme";
 
