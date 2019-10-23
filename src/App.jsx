@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { FirstVisit } from "./components";
 import { HashRouter as Router, Route } from "react-router-dom";
 import { ThemeProvider } from "theme-ui";
+import useKonamiListener from "react-hook-konami-code-listener";
 import theme from "./theme";
+import tbabit from "./assets/tbabit.mp3";
+import lizzy from "./assets/lizzy";
 
 import { Header } from "./components";
 import { WeddingPage, LocationPage, RegistryPage } from "./pages";
@@ -16,6 +19,12 @@ function App() {
   );
   const [loadScreenOpacity, setLoadScreenOpacity] = useState(1);
   const [firstLoad, setFirstLoad] = useState(true);
+  const [match] = useKonamiListener();
+
+  if (match) {
+    console.log(lizzy);
+    document.getElementById("tbabit").play();
+  }
 
   if (!hasVisited) {
     setTimeout(function() {
@@ -51,6 +60,7 @@ function App() {
         <Route path="/location" component={LocationPage} />
         <Route path="/registry" component={RegistryPage} />
       </ThemeProvider>
+      <audio id="tbabit" src={tbabit} preload="auto" loop />
     </Router>
   );
 }
