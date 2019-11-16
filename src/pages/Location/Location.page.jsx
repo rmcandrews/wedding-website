@@ -161,9 +161,9 @@ function LocationPage() {
             marginRight: ["10%", "20%", "30%"]
           }}
         >
-          We have rooms blocked off for wedding guests at a hotel and a
-          guesthouse in the Yvoire-Excenevex area. Mention the Pillai–Chopra
-          wedding when you book to get the group discount.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo
+          odio aenean sed adipiscing diam.
         </div>
         <div
           style={{
@@ -175,20 +175,40 @@ function LocationPage() {
         >
           <div style={{ marginTop: 20 }}>
             <div css={detailContainerCss}>
-              <div style={detailTitleStyle}>ACE HOTEL</div>
+              <div style={detailTitleStyle}>THE GWEN</div>
               <div style={detailContentStyle} css={detailContentCss}>
-                The Ace Hotel is cool. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Aliquam vel rutrum lacus. Nunc molestie sem
-                maximus tincidunt euismod. Integer maximus risus urna, quis
-                scelerisque odio ultricies in.
+                The Gwen is located on Chicago's Michigan Avenue. The bride and
+                groom will be staying here. We have rooms blocked for Friday and
+                Saturday at $XXX a night. Click the link or call the hotel to
+                reserve your room.
               </div>
             </div>
             <div css={detailContainerCss}>
-              <div style={detailTitleStyle}>SOMETHING DOWNTON</div>
+              <div style={detailTitleStyle}>STUMBLING DISTANCE</div>
               <div style={detailContentStyle} css={detailContentCss}>
-                Something downtown is also cool. Maecenas in mi nulla. Nam
-                elementum metus vitae eros malesuada, eu vestibulum leo
-                suscipit. Praesent sollicitudin tellus vel ipsum elementum.
+                <div>
+                  We do not have any room blocks at these hotels but they within
+                  walking distance of the the reception venue and we think they
+                  look cool.
+                </div>
+                <div
+                  style={{ lineHeight: 2.5, color: "#e8ca6f", marginTop: 10 }}
+                >
+                  <a href="https://www.acehotel.com/chicago/" target="blank">
+                    ACE HOTEL
+                  </a>
+                  <br />
+                  <a
+                    href="https://thehoxton.com/illinois/chicago/hotels"
+                    target="blank"
+                  >
+                    THE HOXTON
+                  </a>
+                  <br />
+                  <a href="https://chicago.nobuhotels.com" target="blank">
+                    NOBU HOTEL
+                  </a>
+                </div>
               </div>
             </div>
           </div>
