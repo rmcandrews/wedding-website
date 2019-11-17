@@ -48,14 +48,14 @@ function WeddingPage() {
             css={{ paddingTop: [350, 475, 500] }}
           >
             <Countdown />
-            <Button
+            {/* <Button
               type="fill"
               size="large"
               color="#e8ca6f"
               hoverColor="#e8ca6f"
             >
               RSVP
-            </Button>
+            </Button> */}
             <div
               style={{
                 textAlign: "center",

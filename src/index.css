@@ -69,6 +69,23 @@ a {
   animation-fill-mode: both;
 }
 
+.modal {
+  position: absolute;
+  top: 150px;
+  left: 150px;
+  right: 150px;
+  bottom: 150px;
+  background-color: papayawhip;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;

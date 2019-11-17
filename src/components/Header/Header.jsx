@@ -7,7 +7,8 @@ import Headroom from "react-headroom";
 import { MorphIcon } from "react-svg-buttons";
 import useWindowSize from "@rooks/use-window-size";
 import { useScrollYPosition } from "react-use-scroll-position";
-import { Button } from "../Button";
+// import { Button } from "../Button";
+// import { RSVP } from "../RSVP";
 
 const dib = { display: "inline-block" };
 const lgMenuItemStyle = { display: "inline", paddingRight: "25px" };
@@ -77,7 +78,7 @@ function Header() {
               </ul>
             </nav>
           </div>
-          <Button
+          {/* <Button
             csss={{ display: ["none", "none", "inline-block"] }}
             style={{ float: "right", marginTop: -8 }}
             type="ghost"
@@ -85,7 +86,7 @@ function Header() {
             hoverColor="#e8ca6f"
           >
             RSVP
-          </Button>
+          </Button> */}
           <MorphIcon
             style={{
               position: "fixed",
@@ -153,14 +154,14 @@ function Header() {
                         REGISTRY
                       </Link>
                     </li>
-                    <li
+                    {/* <li
                       className="menu-list-item"
                       style={{ animationDelay: "0.3s" }}
                     >
                       <Button type="fill" color="#e8ca6f" hoverColor="#e8ca6f">
                         RSVP
                       </Button>
-                    </li>
+                    </li> */}
                   </ul>
                 </nav>
               </div>
@@ -170,6 +171,7 @@ function Header() {
           </ReactCSSTransitionGroup>
         </div>
       </header>
+      {/* <RSVP isOpen={true} /> */}
     </Headroom>
   );
 }

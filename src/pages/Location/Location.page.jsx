@@ -161,9 +161,8 @@ function LocationPage() {
             marginRight: ["10%", "20%", "30%"]
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo
-          odio aenean sed adipiscing diam.
+          We have rooms blocked off for wedding guests at The Gwen and a
+          recommendation for hotels nearby the venue.
         </div>
         <div
           style={{
@@ -179,8 +178,7 @@ function LocationPage() {
               <div style={detailContentStyle} css={detailContentCss}>
                 The Gwen is located on Chicago's Michigan Avenue. The bride and
                 groom will be staying here. We have rooms blocked for Friday and
-                Saturday at $XXX a night. Click the link or call the hotel to
-                reserve your room.
+                Saturday at $259 a night.
               </div>
             </div>
             <div css={detailContainerCss}>

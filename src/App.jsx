@@ -65,12 +65,4 @@ function App() {
   );
 }
 
-// function RSVPPage() {
-//   return (
-//     <div>
-//       <h2>RSVP Page</h2>
-//     </div>
-//   );
-// }
-
 export default App;

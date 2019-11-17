@@ -16,6 +16,7 @@
     "react-hero-video": "^0.1.1",
     "react-hook-konami-code-listener": "^1.1.1",
     "react-icons": "^2.2.7",
+    "react-modal": "^3.11.1",
     "react-parallax": "^2.2.3",
     "react-particles-js": "^2.7.0",
     "react-router-dom": "^5.0.1",
