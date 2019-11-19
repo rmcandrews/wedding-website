@@ -76,7 +76,7 @@ function WeddingPage() {
           style={{ textAlign: "center", fontSize: 30 }}
           css={{ fontWeight: 200, margin: ["50px 5%", "50px 20%"] }}
         >
-          Please join Taya and Ryan on July 25th, 2020 as we celebrate our
+          Please join Taya and Ryan on July 25th, 2020 as they celebrate their
           wedding in Chicago.
         </div>
         <div
@@ -103,8 +103,10 @@ function WeddingPage() {
               />
               <div style={detailTitleStyle}>RYAN</div>
               <div style={detailContentStyle} css={detailContentCss}>
-                Cras ut sem mi. Phasellus vitae turpis sagittis, vulputate nibh
-                id, condimentum libero. Proin ut justo massa.
+                Graduated from Notre Dame and is now working as a web developer
+                for Capital One. He created this website, so he is clearly
+                talented. Taya's favorite things about him are his planning
+                abilities, that he makes her laugh, and his calming presence.
               </div>
             </div>
             <div
@@ -121,8 +123,10 @@ function WeddingPage() {
               />
               <div style={detailTitleStyle}>TAYA</div>
               <div style={detailContentStyle} css={detailContentCss}>
-                Sed feugiat sit amet justo a dignissim. Duis vulputate nisi in
-                quam facilisis, vitae commodo augue tempus.
+                Graduated from Syracuse and is working as an interior designer.
+                She designed our apartment, so she is cleary talented. Ryan's
+                favorite things about her are that she is caring, she is weird,
+                and that she makes him be a responsible adult.
               </div>
             </div>
             <div
@@ -139,9 +143,11 @@ function WeddingPage() {
               />
               <div style={detailTitleStyle}>US</div>
               <div style={detailContentStyle} css={detailContentCss}>
-                Nullam ut semper nisl. Praesent volutpat suscipit blandit.
-                Vivamus cursus consequat risus, non laoreet neque aliquam at.
-                Vivamus eget urna lacus.
+                Their first date was a Homeslice Pizza the day of the Cub's
+                World Series Parade. They enjoy traveling, cooking, and forcing
+                one another to go to the gym when not binging Netflix. They got
+                engaged at the Shedd Aquarium when Ryan enlisted the help of the
+                belugas to pop the question.
               </div>
             </div>
           </div>

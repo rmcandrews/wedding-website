@@ -185,9 +185,8 @@ function LocationPage() {
               <div style={detailTitleStyle}>STUMBLING DISTANCE</div>
               <div style={detailContentStyle} css={detailContentCss}>
                 <div>
-                  We do not have any room blocks at these hotels but they within
-                  walking distance of the the reception venue and we think they
-                  look cool.
+                  We do not have any room blocks at these hotels but they are
+                  within walking distance of the the reception venue.
                 </div>
                 <div
                   style={{ lineHeight: 2.5, color: "#e8ca6f", marginTop: 10 }}

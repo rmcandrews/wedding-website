@@ -8,7 +8,7 @@ import tbabit from "./assets/tbabit.mp3";
 import lizzy from "./assets/lizzy";
 
 import { Header } from "./components";
-import { WeddingPage, LocationPage, RegistryPage } from "./pages";
+import { WeddingPage, LocationPage, RegistryPage, GalleryPage } from "./pages";
 
 let loadScreenOpacityTracker = 1;
 let interval;
@@ -59,6 +59,7 @@ function App() {
         <Route exact path="/" component={WeddingPage} />
         <Route path="/location" component={LocationPage} />
         <Route path="/registry" component={RegistryPage} />
+        <Route path="/gallery" component={GalleryPage} />
       </ThemeProvider>
       <audio id="tbabit" src={tbabit} preload="auto" loop />
     </Router>

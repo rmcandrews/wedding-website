@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-function Footer() {
+function Footer({ style }) {
   return (
     <div
       style={{
@@ -11,7 +11,8 @@ function Footer() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        color: "white"
+        color: "white",
+        ...style
       }}
     >
       <span>
