@@ -45,7 +45,7 @@ function WeddingPage() {
         <section css={{ minHeight: [550, 750, 800] }}>
           <div
             style={{ textAlign: "center", width: "100%" }}
-            css={{ paddingTop: [350, 475, 500] }}
+            css={{ paddingTop: [400, 550, 500] }}
           >
             <Countdown />
             {/* <Button

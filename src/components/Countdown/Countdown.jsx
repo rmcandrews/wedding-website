@@ -25,10 +25,10 @@ const Countdown = ({ style }) => {
       css={{ marginTop: ["1rem", "2rem", "3rem"], marginBottom: "1rem" }}
     >
       <div css={circleCss}>
-        <CircularProgressbar value={(days / 365) * 100} text={`${days}`} />;
+        <CircularProgressbar value={(days / 365) * 100} text={`${days}`} />
       </div>
       <div css={circleCss}>
-        <CircularProgressbar value={(hours / 24) * 100} text={`${hours}`} />;
+        <CircularProgressbar value={(hours / 24) * 100} text={`${hours}`} />
       </div>
       <div css={circleCss}>
         <CircularProgressbar value={(minutes / 60) * 100} text={`${minutes}`} />
