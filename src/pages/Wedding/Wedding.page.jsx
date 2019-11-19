@@ -23,7 +23,7 @@ const detailTitleStyle = {
   fontWeight: 400
 };
 
-const detailContentStyle = { fontSize: 14, lineHeight: "24px" };
+const detailContentStyle = { fontSize: 16, lineHeight: "24px" };
 
 const detailContentCss = {
   padding: "0px 5%"
@@ -143,11 +143,11 @@ function WeddingPage() {
               />
               <div style={detailTitleStyle}>US</div>
               <div style={detailContentStyle} css={detailContentCss}>
-                Their first date was a Homeslice Pizza the day of the Cub's
-                World Series Parade. They enjoy traveling, cooking, and forcing
-                one another to go to the gym when not binging Netflix. They got
-                engaged at the Shedd Aquarium when Ryan enlisted the help of the
-                belugas to pop the question.
+                Their first date was a Homeslice Pizza on the day of the Cub's
+                World Series Parade. Together they enjoy traveling, cooking, and
+                forcing one another to go to the gym when not binging Netflix.
+                They got engaged at the Shedd Aquarium when Ryan enlisted the
+                help of the belugas to pop the question.
               </div>
             </div>
           </div>
