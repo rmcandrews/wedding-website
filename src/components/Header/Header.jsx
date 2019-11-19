@@ -133,30 +133,42 @@ function Header() {
                       textAlign: "center"
                     }}
                   >
-                    <li
-                      className="menu-list-item"
-                      style={{ animationDelay: "0.1s" }}
+                    <Link
+                      className="noSelect"
+                      to="/"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link to="/" onClick={() => setMenuOpen(false)}>
+                      <li
+                        className="menu-list-item"
+                        style={{ animationDelay: "0.1s" }}
+                      >
                         WEDDING
-                      </Link>
-                    </li>
-                    <li
-                      className="menu-list-item"
-                      style={{ animationDelay: "0.2s" }}
+                      </li>
+                    </Link>
+                    <Link
+                      className="noSelect"
+                      to="/location"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link to="/location" onClick={() => setMenuOpen(false)}>
+                      <li
+                        className="menu-list-item"
+                        style={{ animationDelay: "0.2s" }}
+                      >
                         LOCATION
-                      </Link>
-                    </li>
-                    <li
-                      className="menu-list-item"
-                      style={{ animationDelay: "0.3s" }}
+                      </li>
+                    </Link>
+                    <Link
+                      className="noSelect"
+                      to="/gallery"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link to="/gallery" onClick={() => setMenuOpen(false)}>
+                      <li
+                        className="menu-list-item"
+                        style={{ animationDelay: "0.3s" }}
+                      >
                         GALLERY
-                      </Link>
-                    </li>
+                      </li>
+                    </Link>
                     {/* <li
                       className="menu-list-item"
                       style={{ animationDelay: "0.3s" }}
