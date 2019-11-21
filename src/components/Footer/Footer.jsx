@@ -19,6 +19,7 @@ function Footer({ style }) {
         Powered by{" "}
         <a
           href="https://github.com/rmcandrews"
+          id="Ryan_Github-click"
           target="_blank"
           rel="noopener noreferrer"
           style={{ textDecoration: "underline" }}

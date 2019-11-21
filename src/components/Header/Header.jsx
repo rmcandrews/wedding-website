@@ -104,6 +104,7 @@ function Header() {
             damping={20}
             stiffness={250}
             color="#FFF"
+            id="Hamburger-Menu-click"
             onClick={() => setMenuOpen(!isMenuOpen)}
           />
           <ReactCSSTransitionGroup

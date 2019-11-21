@@ -32,6 +32,7 @@ const Button = ({
   csss,
   style,
   children,
+  id,
   onClick
 }) => {
   const [isHovering, setIsHovering] = useState(false);
@@ -78,6 +79,7 @@ const Button = ({
       onClick={onClick}
       css={{ fontWeight: "semibold", fontFamily: "sansSerif", ...csss }}
       style={finalStyle}
+      id={id}
     >
       {children}
     </button>

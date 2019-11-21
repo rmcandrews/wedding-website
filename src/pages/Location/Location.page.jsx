@@ -191,18 +191,27 @@ function LocationPage() {
                 <div
                   style={{ lineHeight: 2.5, color: "#e8ca6f", marginTop: 10 }}
                 >
-                  <a href="https://www.acehotel.com/chicago/" target="blank">
+                  <a
+                    href="https://www.acehotel.com/chicago/"
+                    target="blank"
+                    id="Ace_Hotel-click"
+                  >
                     ACE HOTEL
                   </a>
                   <br />
                   <a
                     href="https://thehoxton.com/illinois/chicago/hotels"
                     target="blank"
+                    id="The_Hoxton-click"
                   >
                     THE HOXTON
                   </a>
                   <br />
-                  <a href="https://chicago.nobuhotels.com" target="blank">
+                  <a
+                    href="https://chicago.nobuhotels.com"
+                    target="blank"
+                    id="Nobu_Hotel-click"
+                  >
                     NOBU HOTEL
                   </a>
                 </div>
@@ -292,6 +301,7 @@ function LocationPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: "#e8ca6f" }}
+                  id="Chicago_Park_District-click"
                 >
                   www.chicagoparkdistrict.com
                 </a>
@@ -301,6 +311,7 @@ function LocationPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: "#e8ca6f" }}
+                  id="Lincoln_Park_Zoo-click"
                 >
                   www.lpzoo.org
                 </a>
@@ -325,6 +336,7 @@ function LocationPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: "#e8ca6f" }}
+                  id="Architecture_Tour-click"
                 >
                   www.architecture.org
                 </a>
@@ -348,6 +360,7 @@ function LocationPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: "#e8ca6f" }}
+                  id="Field_Museum-click"
                 >
                   www.fieldmuseum.org
                 </a>
@@ -357,6 +370,7 @@ function LocationPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: "#e8ca6f" }}
+                  id="Shedd-click"
                 >
                   www.sheddaquarium.org
                 </a>
@@ -366,6 +380,7 @@ function LocationPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: "#e8ca6f" }}
+                  id="Art_Institute-click"
                 >
                   www.artic.edu
                 </a>
@@ -375,6 +390,7 @@ function LocationPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: "#e8ca6f" }}
+                  id="Adler-click"
                 >
                   www.adlerplanetarium.org
                 </a>

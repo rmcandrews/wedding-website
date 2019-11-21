@@ -220,6 +220,7 @@ function WeddingPage() {
         </div>
         <div style={{ marginTop: 15 }}>
           <Button
+            id="Queen_of_All_Saints_Map-click"
             type="fill"
             onClick={() => {
               window.open(
@@ -233,6 +234,7 @@ function WeddingPage() {
           </Button>
           <Button
             type="fill"
+            id="Queen_of_All_Saints_Uber-click"
             onClick={() => {
               window.open(
                 "https://m.uber.com/ul/?action=setPickup&client_id=xHi2Lo0Eu_rfUeCrxghCA8jKjWULjNAp&pickup=my_location&dropoff[formatted_address]=Queen%20of%20All%20Saints%20Basilica%2C%20North%20Sauganash%20Avenue%2C%20Chicago%2C%20IL%2C%20USA&dropoff[latitude]=41.995437&dropoff[longitude]=-87.744620",
@@ -323,6 +325,7 @@ function WeddingPage() {
         <div style={{ marginTop: 15 }}>
           <Button
             type="fill"
+            id="City_Hall_Map-click"
             onClick={() => {
               window.open(
                 "https://www.google.com/maps/place/838+W+Kinzie+St,+Chicago,+IL+60642/@41.889282,-87.6512327,17z/data=!3m1!4b1!4m5!3m4!1s0x880e2cd1c3af1c43:0xfcce64686d814594!8m2!3d41.889278!4d-87.649044",
@@ -335,6 +338,7 @@ function WeddingPage() {
           </Button>
           <Button
             type="fill"
+            id="City_Hall_Uber-click"
             onClick={() => {
               window.open(
                 "https://m.uber.com/ul/?action=setPickup&client_id=xHi2Lo0Eu_rfUeCrxghCA8jKjWULjNAp&pickup=my_location&dropoff[formatted_address]=838%20West%20Kinzie%20Street%2C%20Chicago%2C%20IL%2C%20USA&dropoff[latitude]=41.889278&dropoff[longitude]=-87.649044",
