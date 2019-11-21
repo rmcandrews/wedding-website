@@ -32,7 +32,6 @@ const Countdown = ({ style }) => {
       </div>
       <div css={circleCss}>
         <CircularProgressbar value={(minutes / 60) * 100} text={`${minutes}`} />
-        ;
       </div>
     </div>
   );
