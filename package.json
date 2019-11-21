@@ -12,6 +12,7 @@
     "react-circular-progressbar": "^2.0.1",
     "react-device-detect": "^1.7.5",
     "react-dom": "^16.8.6",
+    "react-gtm-module": "^2.0.8",
     "react-headroom": "^2.2.8",
     "react-hero-video": "^0.1.1",
     "react-hook-konami-code-listener": "^1.1.1",
