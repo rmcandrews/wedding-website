@@ -20,7 +20,7 @@ const detailTitleStyle = {
   fontWeight: 400
 };
 
-const detailContentStyle = { fontSize: 16, lineHeight: "30px" };
+const detailContentStyle = { fontSize: "1rem", lineHeight: "2rem" };
 
 const detailContentCss = {
   padding: ["0px 10%", "0px 10%", "0px 20%", "0px 20%"]
@@ -153,7 +153,8 @@ function LocationPage() {
             textAlign: "center",
             marginTop: "50px",
             marginBottom: "50px",
-            fontSize: 16
+            fontSize: "1rem",
+            lineHeight: "1.5rem"
           }}
           css={{
             fontWeight: 200,
@@ -178,7 +179,17 @@ function LocationPage() {
               <div style={detailContentStyle} css={detailContentCss}>
                 The Gwen is located on Chicago's Michigan Avenue. The bride and
                 groom will be staying here. We have rooms blocked for Friday and
-                Saturday at $259 a night.
+                Saturday at $259 a night. To book call the hotel at{" "}
+                <a
+                  href="tel:312-645-1500"
+                  style={{ color: "#e8ca6f", fontWeight: 400 }}
+                >
+                  312&#8209;645&#8209;1500
+                </a>{" "}
+                and mention the{" "}
+                <span style={{ fontWeight: 400 }}>
+                  Lyskanycz/McAndrews Wedding Block
+                </span>
               </div>
             </div>
             <div css={detailContainerCss}>
@@ -257,7 +268,8 @@ function LocationPage() {
             textAlign: "center",
             marginTop: "50px",
             marginBottom: "50px",
-            fontSize: 16
+            fontSize: "1rem",
+            lineHeight: "1.5rem"
           }}
           css={{
             fontWeight: 200,
