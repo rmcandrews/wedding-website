@@ -178,8 +178,9 @@ function LocationPage() {
               <div style={detailTitleStyle}>THE GWEN</div>
               <div style={detailContentStyle} css={detailContentCss}>
                 The Gwen is located on Chicago's Michigan Avenue. The bride and
-                groom will be staying here. We have rooms blocked for Friday and
-                Saturday at $259 a night. To book call the hotel at{" "}
+                groom will be staying here. We have blocked room available
+                Thursday through Monday at $259 a night. The block expires on
+                June 24th. To book call the hotel at{" "}
                 <a
                   href="tel:312-645-1500"
                   style={{ color: "#e8ca6f", fontWeight: 400 }}
@@ -189,7 +190,24 @@ function LocationPage() {
                 and mention the{" "}
                 <span style={{ fontWeight: 400 }}>
                   Lyskanycz/McAndrews Wedding Block
-                </span>
+                </span>{" "}
+                or book online using the link below.
+              </div>
+              <div
+                style={{
+                  lineHeight: 2.5,
+                  color: "#e8ca6f",
+                  marginTop: 10,
+                  fontSize: "1rem"
+                }}
+              >
+                <a
+                  href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1575313545776&key=GRP&app=resvlink"
+                  target="blank"
+                  id="Book-Gwen-click"
+                >
+                  BOOK ONLINE
+                </a>
               </div>
             </div>
             <div css={detailContainerCss}>
