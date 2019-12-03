@@ -297,11 +297,11 @@ function LocationPage() {
           }}
         >
           Chicago is a city unlike any other. It has architectural marvels,
-          world-class museums, dynamic entertainment, and award-winning dining
-          scene you’d expect from one of the world’s greatest cities. But it's
-          more than just another big city — our welcoming residents, inclusive
-          neighborhoods, and Midwestern soul truly make Chicago the city that
-          feels like home.
+          world-class museums, dynamic entertainment, and an award-winning
+          dining scene you’d expect from one of the world’s greatest cities. But
+          it's more than just another big city — our welcoming residents,
+          inclusive neighborhoods, and Midwestern soul truly make Chicago the
+          city that feels like home.
         </div>
         <div
           style={{

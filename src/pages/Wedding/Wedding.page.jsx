@@ -143,7 +143,7 @@ function WeddingPage() {
               />
               <div style={detailTitleStyle}>US</div>
               <div style={detailContentStyle} css={detailContentCss}>
-                Their first date was a Homeslice Pizza on the day of the Cub's
+                Their first date was at Homeslice Pizza on the day of the Cub's
                 World Series Parade. Together they enjoy traveling, cooking, and
                 forcing one another to go to the gym when not binging Netflix.
                 They got engaged at the Shedd Aquarium when Ryan enlisted the
