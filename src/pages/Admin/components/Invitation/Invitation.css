@@ -7,7 +7,6 @@
 }
 
 .titleName {
-  display: inline-block;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 16;
@@ -15,12 +14,10 @@
 }
 
 .titleAddress {
-  display: inline-block;
   white-space: nowrap;
   text-overflow: ellipsis;
   color: #999;
-  font-size: 12;
-  padding-left: 1rem;
-  width: 35%;
+  font-size: 12px;
+  width: 100%;
   overflow: hidden;
 }
