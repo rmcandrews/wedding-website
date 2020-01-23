@@ -1,0 +1,58 @@
+.guestsLabel {
+  display: block;
+  margin: 0 0 0.28571429rem 0;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.92857143em;
+  font-weight: 700;
+  text-transform: none;
+  width: 100%;
+}
+
+.guestFromField {
+  padding: 0.5rem 0;
+  margin-left: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+
+.guestFromField .ui.fitted.toggle.checkbox {
+  margin: 0.5rem auto;
+}
+
+.guestRemoveButton {
+  margin-top: 1em !important;
+}
+
+.rehersalDinnerCheckbox {
+  margin-top: 0em !important;
+}
+
+.guestRemoveButtonContainer {
+  margin: 0.5rem 1.5rem 1.5rem 1.5rem !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .rehersalDinnerCheckbox label {
+    margin-top: 0.5em !important;
+  }
+}
+
+.addressAutocomplete::placeholder {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.guest {
+  border: 1px solid #eee;
+  border-top-width: 0px;
+}
+
+.guest:first-child {
+  border-top-width: 1px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.guest:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

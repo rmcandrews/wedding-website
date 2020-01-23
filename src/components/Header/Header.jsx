@@ -7,8 +7,6 @@ import Headroom from "react-headroom";
 import { MorphIcon } from "react-svg-buttons";
 import useWindowSize from "@rooks/use-window-size";
 import { useScrollYPosition } from "react-use-scroll-position";
-// import { Button } from "../Button";
-// import { RSVP } from "../RSVP";
 
 const dib = { display: "inline-block" };
 const lgMenuItemStyle = { display: "inline", paddingRight: "25px" };

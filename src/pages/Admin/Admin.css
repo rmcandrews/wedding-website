@@ -1,0 +1,21 @@
+.invitation {
+  border: 1px solid #999;
+  border-top-width: 0px;
+  padding: 10px;
+}
+
+.invitation:first-child {
+  border-top-width: 1px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.invitation:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.addInviteButton {
+  float: right;
+  margin-top: 0.5em !important;
+}
