@@ -12,6 +12,10 @@ body {
   overflow-x: hidden;
 }
 
+div {
+  line-height: 1;
+}
+
 a {
   text-decoration: none;
   color: inherit;

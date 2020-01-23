@@ -73,7 +73,7 @@ function WeddingPage() {
       </Parallax>
       <section>
         <div
-          style={{ textAlign: "center", fontSize: 30 }}
+          style={{ textAlign: "center", fontSize: 30, lineHeight: 1.2 }}
           css={{ fontWeight: 200, margin: ["50px 5%", "50px 20%"] }}
         >
           Please join Taya and Ryan on July 25th, 2020 as they celebrate their
