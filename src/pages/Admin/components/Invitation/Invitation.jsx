@@ -13,7 +13,7 @@ function Invitation({ invitation, handleEdit }) {
   }
 
   return (
-    <div className="invitation" style={{ overflow: "auto", paddingBottom: 0 }}>
+    <div className="invitation" style={{ overflow: "auto" }}>
       <div>
         <span className="title">
           <span className="titleName">{invitation.name}</span>
