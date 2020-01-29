@@ -60,26 +60,28 @@ function AdminPage() {
 
   const exportCsv = () => {
     let csv =
-      "Invite Name, Address Line 1, Address Line 2, City, State, Zip, First Name, Last Name, Meal, Wedding Invite, Attending Wedding, Rehersal Invite, Attending Rehersal\n";
+      "Invite Name, First Name, Last Name, Meal, Wedding Invite, Attending Wedding, Rehersal Invite, Attending Rehersal, Address Line 1, Address Line 2, City, State, Zip\n";
     invitations.forEach(invitation => {
       invitation.guests.forEach(guest => {
         csv += `"${invitation.name}",`;
-        if (invitation.address) {
-          csv += `"${invitation.address.line1}",`;
-          csv += `"${invitation.address.line2 || ""}",`;
-          csv += `"${invitation.address.city}",`;
-          csv += `"${invitation.address.state}",`;
-          csv += `"${invitation.address.zip}",`;
-        } else {
-          csv += '"","","","","",';
-        }
         csv += `"${guest.firstName}",`;
         csv += `"${guest.lastName}",`;
         csv += `"${guest.mealSelection}",`;
         csv += `"${guest.weddingInvite ? "TRUE" : "FALSE"}",`;
         csv += `"${guest.isAttendingWedding || "Unknown"}",`;
         csv += `"${guest.rehersalInvite ? "TRUE" : "FALSE"}",`;
-        csv += `"${guest.isAttendingRehersal || "Unknown"}"\n`;
+        csv += `"${
+          guest.rehersalInvite ? guest.isAttendingRehersal || "Unknown" : "No"
+        }",`;
+        if (invitation.address) {
+          csv += `"${invitation.address.line1}",`;
+          csv += `"${invitation.address.line2 || ""}",`;
+          csv += `"${invitation.address.city}",`;
+          csv += `"${invitation.address.state}",`;
+          csv += `"${invitation.address.zip}"\n`;
+        } else {
+          csv += '"","","","",""\n';
+        }
       });
     });
 
