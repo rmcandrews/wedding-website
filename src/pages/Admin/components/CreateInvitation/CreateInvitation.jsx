@@ -116,7 +116,7 @@ class CreateInvitation extends Component {
       line2:
         invitation && invitation.address && invitation.address.line2
           ? invitation.address.line2
-          : "",
+          : undefined,
       guests:
         invitation && invitation.guests
           ? invitation.guests
@@ -221,7 +221,7 @@ class CreateInvitation extends Component {
   };
 
   render() {
-    let { guests, address } = this.state;
+    let { guests, address, line2 } = this.state;
     return (
       <div className="invitation">
         <Form onSubmit={this.handleSubmit}>
@@ -281,11 +281,7 @@ class CreateInvitation extends Component {
             </Form.Field>
             <Form.Field
               onChange={this.handleChange}
-              value={
-                this.state.address && this.state.address.line2
-                  ? this.state.address.line2
-                  : ""
-              }
+              value={line2}
               control={Input}
               name="line2"
               label="Apt/Unit"

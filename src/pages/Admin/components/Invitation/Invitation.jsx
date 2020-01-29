@@ -8,7 +8,7 @@ function Invitation({ invitation, handleEdit }) {
   let displayedAddress = "";
   let addressNeeded = false;
   if (address.line1) {
-    displayedAddress = `${address.line1} ${
+    displayedAddress = `${address.line1}${
       address.line2 ? ` ${address.line2}` : ""
     }, ${address.city}, ${address.state} ${address.zip}`;
   } else {
