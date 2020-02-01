@@ -13,6 +13,7 @@ const detailContainerCss = {
   verticalAlign: "top",
   width: ["100%", "100%", "100%", "50%"],
   fontWeight: 300,
+  fontSize: 16,
   marginTop: [25, 25, 25, 0]
 };
 
@@ -206,7 +207,7 @@ function WeddingPage() {
         </div>
         <div
           style={{
-            fontSize: 14,
+            fontSize: 16,
             fontWeight: 400,
             marginTop: 15,
             lineHeight: "28px"
@@ -221,7 +222,7 @@ function WeddingPage() {
         <div style={{ marginTop: 15 }}>
           <Button
             id="Queen_of_All_Saints_Map-click"
-            type="fill"
+            type="ghost"
             onClick={() => {
               window.open(
                 "https://www.google.com/maps/place/Queen+of+All+Saints+Basilica/@41.9954372,-87.7468087,17z/data=!3m1!4b1!4m5!3m4!1s0x880fce8d2001307f:0xbc6e8ed0ef34e0fc!8m2!3d41.9954372!4d-87.74462",
@@ -233,7 +234,7 @@ function WeddingPage() {
             <FaMap /> MAP
           </Button>
           <Button
-            type="fill"
+            type="ghost"
             id="Queen_of_All_Saints_Uber-click"
             onClick={() => {
               window.open(
@@ -304,7 +305,7 @@ function WeddingPage() {
         </div>
         <div
           style={{
-            fontSize: 14,
+            fontSize: 16,
             fontWeight: 400,
             marginTop: 15,
             lineHeight: "28px"
@@ -324,7 +325,7 @@ function WeddingPage() {
         </div>
         <div style={{ marginTop: 15 }}>
           <Button
-            type="fill"
+            type="ghost"
             id="City_Hall_Map-click"
             onClick={() => {
               window.open(
@@ -337,7 +338,7 @@ function WeddingPage() {
             <FaMap style={{ fontSize: 12 }} /> MAP
           </Button>
           <Button
-            type="fill"
+            type="ghost"
             id="City_Hall_Uber-click"
             onClick={() => {
               window.open(

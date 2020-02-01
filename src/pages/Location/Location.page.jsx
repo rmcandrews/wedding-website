@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import FaAngleDown from "react-icons/lib/fa/angle-down";
+import { Button } from "../../components";
 import { Footer } from "../../components";
 import { Parallax } from "react-parallax";
 
@@ -20,7 +21,7 @@ const detailTitleStyle = {
   fontWeight: 400
 };
 
-const detailContentStyle = { fontSize: "1rem", lineHeight: "2rem" };
+const detailContentStyle = { fontSize: "1.25rem", lineHeight: "2rem" };
 
 const detailContentCss = {
   padding: ["0px 10%", "0px 10%", "0px 20%", "0px 20%"]
@@ -153,13 +154,15 @@ function LocationPage() {
             textAlign: "center",
             marginTop: "50px",
             marginBottom: "50px",
-            fontSize: "1rem",
+            fontSize: "1.25rem",
             lineHeight: "1.5rem"
           }}
           css={{
             fontWeight: 200,
             marginLeft: ["10%", "20%", "30%"],
-            marginRight: ["10%", "20%", "30%"]
+            marginRight: ["10%", "20%", "30%"],
+            fontSize: "1.25rem",
+            lineHeight: "1.5rem"
           }}
         >
           We have rooms blocked off for wedding guests at The Gwen and a
@@ -198,22 +201,26 @@ function LocationPage() {
                   lineHeight: 2.5,
                   color: "#e8ca6f",
                   marginTop: 10,
-                  fontSize: "1rem"
+                  fontSize: "1.25rem"
                 }}
               >
-                <a
-                  href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1575313545776&key=GRP&app=resvlink"
-                  target="blank"
+                <Button
                   id="Book-Gwen-click"
+                  onClick={() => {
+                    window.open(
+                      "https://www.marriott.com/event-reservations/reservation-link.mi?id=1575313545776&key=GRP&app=resvlink",
+                      "blank"
+                    );
+                  }}
                 >
                   BOOK ONLINE
-                </a>
+                </Button>
               </div>
             </div>
             <div css={detailContainerCss}>
               <div style={detailTitleStyle}>STUMBLING DISTANCE</div>
               <div style={detailContentStyle} css={detailContentCss}>
-                <div>
+                <div style={{ lineHeight: "2rem" }}>
                   We do not have any room blocks at these hotels but they are
                   within walking distance of the the reception venue.
                 </div>
@@ -286,7 +293,7 @@ function LocationPage() {
             textAlign: "center",
             marginTop: "50px",
             marginBottom: "50px",
-            fontSize: "1rem",
+            fontSize: "1.25rem",
             lineHeight: "1.5rem"
           }}
           css={{

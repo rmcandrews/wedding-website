@@ -3,16 +3,6 @@ import { isMobile } from "react-device-detect";
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-const styles = {
-  fill: {
-    backgroundColor: "transparent"
-  },
-  ghost: {
-    background: "transparent",
-    border: "solid 2px"
-  }
-};
-
 const sizes = {
   small: {
     padding: "8px 30px",
@@ -37,19 +27,30 @@ const Button = ({
 }) => {
   const [isHovering, setIsHovering] = useState(false);
 
+  let textColor;
+  let backgroundColor;
+  if (!type) type = "fill";
   if (!size) size = "small";
-  if (!color) color = "#e8ca6f";
-  if (!hoverColor) hoverColor = color;
+  if (!color) {
+    backgroundColor = type === "fill" ? "#e8ca6f" : "white";
+    textColor = type === "fill" ? "white" : "#e8ca6f";
+  } else {
+    backgroundColor = type === "fill" ? color : "white";
+    textColor = type === "fill" ? "white" : color;
+  }
+
+  if (!hoverColor) hoverColor = type === "fill" ? "white" : backgroundColor;
 
   let finalStyle = {
-    color,
-    borderColor: color,
+    color: textColor,
+    backgroundColor,
+    borderColor: textColor,
     cursor: "pointer",
     fontSize: 14,
+    border: "solid 1px",
     transition:
       "color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease",
     ...sizes[size],
-    ...styles[type || "fill"],
     ...style
   };
 
@@ -62,14 +63,9 @@ const Button = ({
   };
 
   if (isHovering) {
-    if (type === "ghost") {
-      finalStyle.color = hoverColor;
-      finalStyle.borderColor = hoverColor;
-    } else {
-      finalStyle.color = "white";
-      finalStyle.borderColor = hoverColor;
-      finalStyle.backgroundColor = hoverColor;
-    }
+    finalStyle.color = backgroundColor;
+    finalStyle.backgroundColor = textColor;
+    finalStyle.borderColor = textColor;
   }
 
   return (

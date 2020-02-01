@@ -74,48 +74,50 @@ class NameForm extends Component {
     } = this.state;
 
     return (
-      <Form
-        onSubmit={this.handleSubmit}
-        loading={loading}
-        error={error}
-        warning={warning}
-      >
-        <Form.Input
-          error={firstNameMissing ? firstNameError : false}
-          placeholder={firstNamePlaceholder}
-          name="firstName"
-          onChange={this.handleChange}
-          onSelect={() => this.setState({ firstNamePlaceholder: "" })}
-          onBlur={() => this.setState({ firstNamePlaceholder: "First Name" })}
-          fluid
-          className="nameField"
-        />
-        <Form.Input
-          error={lastNameMissing ? lastNameError : false}
-          placeholder={lastNamePlaceholder}
-          name="lastName"
-          onChange={this.handleChange}
-          onSelect={() => this.setState({ lastNamePlaceholder: "" })}
-          onBlur={() => this.setState({ lastNamePlaceholder: "Last Name" })}
-          fluid
-          className="nameField"
-        />
-        <Message
-          error
-          header="Error"
-          content="There was a problem retrieving your information. If the problem persists please contact Ryan or Taya."
-        />
-        <Message
-          warning
-          header="We couldn't find you"
-          list={[
-            "Try a different name",
-            "Try a name of someone else in your party",
-            "Contact Ryan or Taya"
-          ]}
-        />
-        <Form.Button color="black" content="Search" fluid />
-      </Form>
+      <div style={{ maxWidth: 630, margin: "auto" }}>
+        <Form
+          onSubmit={this.handleSubmit}
+          loading={loading}
+          error={error}
+          warning={warning}
+        >
+          <Form.Input
+            error={firstNameMissing ? firstNameError : false}
+            placeholder={firstNamePlaceholder}
+            name="firstName"
+            onChange={this.handleChange}
+            onSelect={() => this.setState({ firstNamePlaceholder: "" })}
+            onBlur={() => this.setState({ firstNamePlaceholder: "First Name" })}
+            fluid
+            className="nameField"
+          />
+          <Form.Input
+            error={lastNameMissing ? lastNameError : false}
+            placeholder={lastNamePlaceholder}
+            name="lastName"
+            onChange={this.handleChange}
+            onSelect={() => this.setState({ lastNamePlaceholder: "" })}
+            onBlur={() => this.setState({ lastNamePlaceholder: "Last Name" })}
+            fluid
+            className="nameField"
+          />
+          <Message
+            error
+            header="Error"
+            content="There was a problem retrieving your information. If the problem persists please contact Ryan or Taya."
+          />
+          <Message
+            warning
+            header="We couldn't find you"
+            list={[
+              "Try a different name",
+              "Try a name of someone else in your party",
+              "Contact Ryan or Taya"
+            ]}
+          />
+          <Form.Button color="black" content="Search" fluid />
+        </Form>
+      </div>
     );
   }
 }

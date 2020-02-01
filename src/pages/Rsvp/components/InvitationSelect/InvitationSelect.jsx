@@ -11,27 +11,29 @@ const InvitationSelect = ({ invitations, handleInvitationSelect, history }) => {
 
   if (invitations && invitations.length > 0) {
     return (
-      <Card.Group>
-        {invitations.map(invitation => {
-          const { address } = invitation;
-          const displayedAddress = `${address.line1}${
-            address.line2 ? ` ${address.line2}` : ""
-          }, ${address.city}, ${address.state} ${address.zip}`;
-          return (
-            <Card
-              fluid
-              key={invitation.id}
-              header={invitation.name}
-              description={displayedAddress}
-              className="invitationSelect"
-              tabIndex={0}
-              onClick={() => {
-                handleInvitationSelect(invitation);
-              }}
-            />
-          );
-        })}
-      </Card.Group>
+      <div style={{ maxWidth: 644, margin: "auto" }}>
+        <Card.Group itemsPerRow={2} stackable>
+          {invitations.map(invitation => {
+            const { address } = invitation;
+            const displayedAddress = `${address.line1}${
+              address.line2 ? ` ${address.line2}` : ""
+            }, ${address.city}, ${address.state} ${address.zip}`;
+            return (
+              <Card
+                fluid
+                key={invitation.id}
+                header={invitation.name}
+                description={displayedAddress}
+                className="invitationSelect"
+                tabIndex={0}
+                onClick={() => {
+                  handleInvitationSelect(invitation);
+                }}
+              />
+            );
+          })}
+        </Card.Group>
+      </div>
     );
   }
   return <div></div>;

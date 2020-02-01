@@ -3,6 +3,8 @@ import { withRouter, Route, Switch } from "react-router-dom";
 import { Footer } from "../../components";
 import { NameForm, InvitationSelect, RsvpForm } from "./components";
 import { Button } from "semantic-ui-react";
+import RSVPImage from "../../assets/RSVP.png";
+import "./Rsvp.css";
 
 const RsvpPage = ({ history }) => {
   const [matchedInvitations, setMatchedInvitations] = useState(undefined);
@@ -26,17 +28,49 @@ const RsvpPage = ({ history }) => {
   return (
     <div style={{ marginTop: -150 }}>
       <div style={{ height: 149, backgroundColor: "black" }} />
-      <div style={{ padding: 10, minHeight: 700 }}>
+      <div className="rsvpPageContainer">
         <Switch>
           <Route exact path="/rsvp">
-            <NameForm handleInvitationsRetrieved={handleInvitationsRetrieved} />
+            <div style={{ textAlign: "center", paddingTop: "2em" }}>
+              <img
+                src={RSVPImage}
+                alt="rsvp"
+                width="50%"
+                style={{ maxWidth: 300 }}
+              />
+              <div
+                style={{ textAlign: "center", fontSize: 16, padding: "2em" }}
+              >
+                Search for your name below to find your invitation and RSVP
+              </div>
+              <div style={{ textAlign: "center" }}>
+                <NameForm
+                  handleInvitationsRetrieved={handleInvitationsRetrieved}
+                />
+              </div>
+            </div>
           </Route>
           <Route exact path="/rsvp/select">
-            <InvitationSelect
-              history={history}
-              invitations={matchedInvitations}
-              handleInvitationSelect={handleInvitationSelect}
-            />
+            <div style={{ textAlign: "center", paddingTop: "2em" }}>
+              <div
+                style={{
+                  textAlign: "center",
+                  fontSize: 16,
+                  padding: "2em",
+                  paddingTop: "1em"
+                }}
+              >
+                We found more multiple invitations matching your name. Please
+                choose the correct invite.
+              </div>
+              <div style={{ textAlign: "center" }}>
+                <InvitationSelect
+                  history={history}
+                  invitations={matchedInvitations}
+                  handleInvitationSelect={handleInvitationSelect}
+                />
+              </div>
+            </div>
           </Route>
           <Route path="/rsvp/:id">
             <RsvpForm selectedInvitation={selectedInvitation} />

@@ -1,17 +1,18 @@
 .invitationSelect {
-  margin-top: 0.5em !important;
-  margin-bottom: 0.5em !important;
-}
-
-.invitationSelect {
   cursor: pointer !important;
 }
 
-.invitationSelect .content .description {
-  min-width: 300px !important;
+.invitationSelect .content {
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
+}
+
+.invitationSelect .content .description {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  line-height: 1.25;
 }
 
 .invitationSelect:hover {
@@ -26,12 +27,4 @@
     0 1px 3px 0 #d4d4d5 !important;
   -webkit-box-shadow: 0 0 0 1px #d4d4d5, 0 4px 0 0 rgb(232, 202, 111),
     0 1px 3px 0 #d4d4d5 !important;
-}
-
-.invitationSelect:first-child {
-  margin-top: 1em !important;
-}
-
-.invitationSelect:last-child {
-  margin-bottom: 1em !important;
 }
