@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import FaAngleDown from "react-icons/lib/fa/angle-down";
+import { FaAngleDown } from "react-icons/fa";
 import { Button } from "../../components";
 import { Footer } from "../../components";
 import { Parallax } from "react-parallax";

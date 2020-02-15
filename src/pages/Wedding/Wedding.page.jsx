@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Button, Countdown, Footer } from "../../components";
-import FaMap from "react-icons/lib/fa/map";
-import FaAngleDown from "react-icons/lib/fa/angle-down";
+import { FaMap } from "react-icons/fa";
+import { FaAngleDown } from "react-icons/fa";
 import { isMobile } from "react-device-detect";
 import { Parallax } from "react-parallax";
 

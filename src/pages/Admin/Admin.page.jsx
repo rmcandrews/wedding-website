@@ -74,11 +74,11 @@ function AdminPage() {
           guest.rehersalInvite ? guest.isAttendingRehersal || "Unknown" : "No"
         }",`;
         if (invitation.address) {
-          csv += `"${invitation.address.line1}",`;
+          csv += `"${invitation.address.line1 || ""}",`;
           csv += `"${invitation.address.line2 || ""}",`;
-          csv += `"${invitation.address.city}",`;
-          csv += `"${invitation.address.state}",`;
-          csv += `"${invitation.address.zip}"\n`;
+          csv += `"${invitation.address.city || ""}",`;
+          csv += `"${invitation.address.state || ""}",`;
+          csv += `"${invitation.address.zip || ""}"\n`;
         } else {
           csv += '"","","","",""\n';
         }

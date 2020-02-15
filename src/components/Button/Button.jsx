@@ -23,7 +23,9 @@ const Button = ({
   style,
   children,
   id,
-  onClick
+  className,
+  onClick,
+  ref
 }) => {
   const [isHovering, setIsHovering] = useState(false);
 
@@ -76,6 +78,7 @@ const Button = ({
       css={{ fontWeight: "semibold", fontFamily: "sansSerif", ...csss }}
       style={finalStyle}
       id={id}
+      className={className}
     >
       {children}
     </button>

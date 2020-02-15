@@ -3,8 +3,19 @@ import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import { useParams } from "react-router";
 import axios from "axios";
-import { Loader, Card, Button, Select } from "semantic-ui-react";
+import {
+  Loader,
+  Card,
+  Button,
+  Select,
+  CardContent,
+  Icon
+} from "semantic-ui-react";
+import Modal from "react-responsive-modal";
+import { FaUtensils, FaCalendarDay } from "react-icons/fa";
+import { Button as MyButtom } from "../../../../components";
 import { SemanticToastContainer, toast } from "react-semantic-toasts";
+import Menu from "./Menu";
 import clonedeep from "lodash.clonedeep";
 
 import "./RsvpForm.css";
@@ -16,32 +27,67 @@ const apiHost =
     : "https://7j47jby7yj.execute-api.us-east-1.amazonaws.com/production";
 
 const mealOptions = [
-  { key: "Beef", value: "Beef", text: "Beef" },
-  { key: "Chicken", value: "Chicken", text: "Chicken" },
-  { key: "Fish", value: "Fish", text: "Fish" },
-  { key: "Veggie", value: "Veggie", text: "Veggie" },
+  {
+    key: "Beef",
+    value: "Beef",
+    text: (
+      <span>
+        Beef <span className="entreeDescriptor">• Herb Crusted Tenderloin</span>
+      </span>
+    )
+  },
+  {
+    key: "Fish",
+    value: "Fish",
+    text: (
+      <span>
+        Fish <span className="entreeDescriptor">• Blackened Barramundi</span>
+      </span>
+    )
+  },
+  {
+    key: "Veggie",
+    value: "Veggie",
+    text: (
+      <span>
+        Veggie{" "}
+        <span className="entreeDescriptor">• Black Truffle Strigoli</span>
+      </span>
+    )
+  },
   { key: "Kid", value: "Kid", text: "Kid" }
 ];
 
-const RsvpGuest = ({ guest, onUpdateGuest }) => {
+const RsvpGuest = ({ guest, onUpdateGuest, previousGuest, index }) => {
   const [loadingComponent, setLoadingComponent] = useState(undefined);
 
   const resetLoading = () => {
     setLoadingComponent(undefined);
   };
 
+  // If the guest is at an odd index, does not have a rehersal invite,
+  // and the preivous guest does another element must be added to match height
+  let shouldFillForLackOfReheral =
+    index % 2 === 1 && !guest.rehersalInvite && previousGuest.rehersalInvite;
+
   return (
     <Card fluid>
-      <Card.Content>
-        <Card.Header>{`${guest.firstName} ${guest.lastName}`}</Card.Header>
-      </Card.Content>
-      <Card.Content extra>
+      <CardContent>
+        <Card.Header>
+          <div className="guestCardTitle">{`${guest.firstName} ${guest.lastName}`}</div>
+        </Card.Header>
+      </CardContent>
+      <Card.Content extra className="cardContent">
         {guest.rehersalInvite && (
-          <div>
-            <div>Attending Rehersal Dinner</div>
+          <div className="selectorContainer">
+            <div className="selectorTitle">Rehersal Dinner</div>
             <div className="ui two buttons">
               <Button
-                basic={guest.isAttendingRehersal === "No"}
+                basic={
+                  guest.isAttendingRehersal === undefined ||
+                  guest.isAttendingRehersal === "No"
+                }
+                className="acceptButton"
                 color="green"
                 onClick={() => {
                   setLoadingComponent("REHERSAL_ACCEPT");
@@ -53,13 +99,14 @@ const RsvpGuest = ({ guest, onUpdateGuest }) => {
                 }}
                 loading={loadingComponent === "REHERSAL_ACCEPT"}
               >
-                Accept
+                {guest.isAttendingRehersal === "Yes" ? "Accepted" : "Accept"}
               </Button>
               <Button
                 basic={
                   guest.isAttendingRehersal === undefined ||
                   guest.isAttendingRehersal === "Yes"
                 }
+                className="declineButton"
                 color="red"
                 onClick={() => {
                   setLoadingComponent("REHERSAL_DECLINE");
@@ -71,16 +118,26 @@ const RsvpGuest = ({ guest, onUpdateGuest }) => {
                 }}
                 loading={loadingComponent === "REHERSAL_DECLINE"}
               >
-                Decline
+                {guest.isAttendingRehersal === "No" ? "Declined" : "Decline"}
               </Button>
             </div>
           </div>
         )}
-        <div>
-          <div>{`Attending${guest.rehersalInvite ? "" : " Wedding"}`}</div>
+        {shouldFillForLackOfReheral && (
+          <div className="noRehersalFiller">
+            <Icon name="heart" size="big" />
+            <Icon name="diamond" size="big" />
+            <Icon name="beer" size="big" />
+          </div>
+        )}
+        <div className="selectorContainer">
+          <div className="selectorTitle">Wedding</div>
           <div className="ui two buttons">
             <Button
-              basic={guest.isAttendingWedding === "No"}
+              basic={
+                guest.isAttendingWedding === undefined ||
+                guest.isAttendingWedding === "No"
+              }
               color="green"
               onClick={() => {
                 setLoadingComponent("WEDDING_ACCEPT");
@@ -92,7 +149,7 @@ const RsvpGuest = ({ guest, onUpdateGuest }) => {
               }}
               loading={loadingComponent === "WEDDING_ACCEPT"}
             >
-              Accept
+              {guest.isAttendingWedding === "Yes" ? "Accepted" : "Accept"}
             </Button>
             <Button
               basic={
@@ -100,6 +157,7 @@ const RsvpGuest = ({ guest, onUpdateGuest }) => {
                 guest.isAttendingWedding === "Yes"
               }
               color="red"
+              className="declineButton"
               onClick={() => {
                 setLoadingComponent("WEDDING_DECLINE");
                 onUpdateGuest(
@@ -110,28 +168,27 @@ const RsvpGuest = ({ guest, onUpdateGuest }) => {
               }}
               loading={loadingComponent === "WEDDING_DECLINE"}
             >
-              Decline
+              {guest.isAttendingWedding === "No" ? "Declined" : "Decline"}
             </Button>
           </div>
         </div>
-        {guest.isAttendingWedding && (
-          <div>
-            <Select
-              placeholder="Select your meal"
-              options={mealOptions}
-              value={
-                guest.mealSelection === "Unknown" ? "" : guest.mealSelection
-              }
-              onChange={(event, data) => {
-                onUpdateGuest(
-                  guest.id,
-                  { mealSelection: data.value },
-                  resetLoading
-                );
-              }}
-            />
-          </div>
-        )}
+        <div style={{ textAlign: "center" }}>
+          <div className="selectorTitle">Meal</div>
+          <Select
+            placeholder="Select your meal"
+            options={mealOptions}
+            fluid
+            disabled={guest.isAttendingWedding !== "Yes"}
+            value={guest.mealSelection === "Unknown" ? "" : guest.mealSelection}
+            onChange={(event, data) => {
+              onUpdateGuest(
+                guest.id,
+                { mealSelection: data.value },
+                resetLoading
+              );
+            }}
+          />
+        </div>
       </Card.Content>
     </Card>
   );
@@ -141,6 +198,8 @@ const RsvpForm = ({ selectedInvitation, history }) => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [invitation, setInvitation] = useState(selectedInvitation);
+  const [menuModalOpen, setMenuModalOpen] = useState(false);
+  const [detailsModalOpen, setDetailsModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchInvitation = async () => {
@@ -193,14 +252,60 @@ const RsvpForm = ({ selectedInvitation, history }) => {
   if (loading) return <Loader active inline="centered" />;
 
   return (
-    <div>
+    <div className="rsvpForm">
       <h2 className="invitationTitle">{invitation.name}</h2>
+      <div className="rsvpDirections">
+        <div>Please RSVP for each guest bellow and choose a meal.</div>
+        <div style={{ padding: "1.5rem 0" }}>
+          <MyButtom
+            id="RSVP_Details-click"
+            onClick={() => setDetailsModalOpen(true)}
+            className="topButton"
+          >
+            <div className="menuButtonContent">
+              <span className="menuButtonIcon">
+                <FaCalendarDay />
+              </span>
+              <span className="menuButtonText"> DETAILS</span>
+            </div>
+          </MyButtom>
+          <MyButtom
+            id="RSVP_Menu-click"
+            onClick={() => setMenuModalOpen(true)}
+            className="topButton"
+            style={{ margin: "0 2.25rem 0 0" }}
+          >
+            <div className="menuButtonContent">
+              <span className="menuButtonIcon">
+                <FaUtensils />
+              </span>
+              <span className="menuButtonText"> MENU</span>
+            </div>
+          </MyButtom>
+          <Modal
+            open={menuModalOpen}
+            onClose={() => setMenuModalOpen(false)}
+            center
+          >
+            <Menu />
+          </Modal>
+          <Modal
+            open={detailsModalOpen}
+            onClose={() => setDetailsModalOpen(false)}
+            center
+          >
+            Details
+          </Modal>
+        </div>
+      </div>
       <SemanticToastContainer position="bottom-right" />
-      <Card.Group>
-        {invitation.guests.map(guest => (
+      <Card.Group itemsPerRow={2} stackable>
+        {invitation.guests.map((guest, i) => (
           <RsvpGuest
             guest={guest}
             key={guest.id}
+            previousGuest={i > 0 ? invitation.guests[i - 1] : undefined}
+            index={i}
             onUpdateGuest={handleGuestUpdate}
           />
         ))}

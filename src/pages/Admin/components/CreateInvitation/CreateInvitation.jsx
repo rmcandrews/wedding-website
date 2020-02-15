@@ -9,7 +9,6 @@ import "./CreateInvitation.css";
 const mealOptions = [
   { key: "Unknown", value: "Unknown", text: "Unknown" },
   { key: "Beef", value: "Beef", text: "Beef" },
-  { key: "Chicken", value: "Chicken", text: "Chicken" },
   { key: "Fish", value: "Fish", text: "Fish" },
   { key: "Veggie", value: "Veggie", text: "Veggie" },
   { key: "Kid", value: "Kid", text: "Kid" }

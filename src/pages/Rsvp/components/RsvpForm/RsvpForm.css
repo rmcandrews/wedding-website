@@ -1,3 +1,138 @@
 .invitationTitle {
   text-align: center;
 }
+
+.menuButtonContent {
+  display: table;
+}
+
+.menuButtonIcon {
+  display: table-cell;
+  vertical-align: middle;
+  height: 16px;
+  padding-top: 2px;
+}
+
+.menuButtonText {
+  display: table-cell;
+  padding-left: 0.25rem;
+  width: 50px;
+  text-align: right;
+  font-size: 16px;
+  vertical-align: middle;
+  height: 16px;
+}
+
+.guestCardTitle {
+  font-size: 1.5rem;
+  font-weight: semi-bold;
+  text-align: center;
+}
+
+.rsvpDirections {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0 0rem;
+  margin-bottom: 1rem;
+}
+
+.rsvpForm {
+  padding: 0;
+}
+
+.selectorTitle {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.selectorContainer {
+  margin-bottom: 1.5rem;
+}
+
+.cardContent {
+  padding: 1rem 10% !important;
+}
+
+.noRehersalFiller {
+  height: 6.285rem;
+  text-align: center;
+  opacity: 0.25;
+  padding-top: 1.5rem;
+  display: none;
+}
+
+.styles_modal__gNwvD {
+  max-width: 100vw !important;
+  width: 100%;
+  min-height: 100%;
+  outline: 3px solid #e8ca6f;
+  box-shadow: unset !important;
+  background-clip: unset !important;
+}
+
+.menuContainer {
+  outline: 3px solid black;
+  padding: 1rem;
+  font-family: URW Chancery L, cursive;
+  text-align: center;
+}
+
+.menuTitle {
+  color: #e8ca6f;
+  font-family: URW Chancery L, cursive;
+}
+
+.menuItemTitle {
+  font-family: URW Chancery L, cursive;
+}
+
+.menuDescription {
+  text-align: center;
+  opacity: 0.6;
+}
+
+.entreeDescriptor {
+  opacity: 0.5;
+}
+
+.topButton {
+  margin: 0 1rem;
+}
+
+.declineButton {
+  border: 1px #db2828 solid !important;
+  border-left: none !important;
+}
+
+.ui.basic.red.button.declineButton {
+  box-shadow: none !important;
+}
+
+@media only screen and (min-width: 480px) {
+  .styles_modal__gNwvD {
+    max-width: 75vw !important;
+    width: unset;
+    min-height: unset;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .rsvpDirections {
+    padding: 0 8rem;
+  }
+
+  .styles_modal__gNwvD {
+    max-width: 50vw !important;
+    width: unset;
+    height: unset;
+  }
+
+  .rsvpForm {
+    padding: 0 2rem 1rem 2rem;
+  }
+
+  .noRehersalFiller {
+    display: block;
+  }
+}
