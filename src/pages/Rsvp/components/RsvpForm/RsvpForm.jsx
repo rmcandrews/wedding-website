@@ -16,6 +16,7 @@ import { FaUtensils, FaCalendarDay } from "react-icons/fa";
 import { Button as MyButtom } from "../../../../components";
 import { SemanticToastContainer, toast } from "react-semantic-toasts";
 import Menu from "./Menu";
+import Details from "./Details";
 import clonedeep from "lodash.clonedeep";
 
 import "./RsvpForm.css";
@@ -87,7 +88,9 @@ const RsvpGuest = ({ guest, onUpdateGuest, previousGuest, index }) => {
                   guest.isAttendingRehersal === undefined ||
                   guest.isAttendingRehersal === "No"
                 }
-                className="acceptButton"
+                className={`acceptButton ${
+                  guest.isAttendingRehersal ? "acceptButtonSelected" : ""
+                }`}
                 color="green"
                 onClick={() => {
                   setLoadingComponent("REHERSAL_ACCEPT");
@@ -106,7 +109,9 @@ const RsvpGuest = ({ guest, onUpdateGuest, previousGuest, index }) => {
                   guest.isAttendingRehersal === undefined ||
                   guest.isAttendingRehersal === "Yes"
                 }
-                className="declineButton"
+                className={`declineButton ${
+                  guest.isAttendingRehersal ? "declineButtonSelected" : ""
+                }`}
                 color="red"
                 onClick={() => {
                   setLoadingComponent("REHERSAL_DECLINE");
@@ -138,6 +143,9 @@ const RsvpGuest = ({ guest, onUpdateGuest, previousGuest, index }) => {
                 guest.isAttendingWedding === undefined ||
                 guest.isAttendingWedding === "No"
               }
+              className={`acceptButton ${
+                guest.isAttendingWedding ? "acceptButtonSelected" : ""
+              }`}
               color="green"
               onClick={() => {
                 setLoadingComponent("WEDDING_ACCEPT");
@@ -156,8 +164,10 @@ const RsvpGuest = ({ guest, onUpdateGuest, previousGuest, index }) => {
                 guest.isAttendingWedding === undefined ||
                 guest.isAttendingWedding === "Yes"
               }
+              className={`declineButton ${
+                guest.isAttendingWedding ? "declineButtonSelected" : ""
+              }`}
               color="red"
-              className="declineButton"
               onClick={() => {
                 setLoadingComponent("WEDDING_DECLINE");
                 onUpdateGuest(
@@ -198,6 +208,10 @@ const RsvpForm = ({ selectedInvitation, history }) => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [invitation, setInvitation] = useState(selectedInvitation);
+  const [
+    hasAtLeastOneRehersalInvite,
+    setHasAtLeastOneRehersalInvite
+  ] = useState(false);
   const [menuModalOpen, setMenuModalOpen] = useState(false);
   const [detailsModalOpen, setDetailsModalOpen] = useState(false);
 
@@ -207,12 +221,24 @@ const RsvpForm = ({ selectedInvitation, history }) => {
         try {
           let response = await axios.get(`${apiHost}/invitations/${id}`);
           setInvitation(response.data);
+          for (let i = 0; i < response.data.guests.length; i++) {
+            if (response.data.guests[i].rehersalInvite) {
+              setHasAtLeastOneRehersalInvite(true);
+              break;
+            }
+          }
           setLoading(false);
         } catch (error) {
           console.error(error);
           history.push("/rsvp");
         }
       } else {
+        for (let i = 0; i < invitation.guests.length; i++) {
+          if (invitation.guests[i].rehersalInvite) {
+            setHasAtLeastOneRehersalInvite(true);
+            break;
+          }
+        }
         setLoading(false);
       }
     };
@@ -294,7 +320,7 @@ const RsvpForm = ({ selectedInvitation, history }) => {
             onClose={() => setDetailsModalOpen(false)}
             center
           >
-            Details
+            <Details showRehersal={hasAtLeastOneRehersalInvite} />
           </Modal>
         </div>
       </div>
