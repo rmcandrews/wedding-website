@@ -60,8 +60,8 @@ const RsvpPage = ({ history }) => {
                   paddingTop: "1em"
                 }}
               >
-                We found more multiple invitations matching your name. Please
-                choose the correct invite.
+                We found multiple invitations that match your search. Please
+                choose your invite.
               </div>
               <div style={{ textAlign: "center" }}>
                 <InvitationSelect
