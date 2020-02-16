@@ -44,6 +44,17 @@ function AdminPage() {
     }
   };
 
+  const handleDelete = async (e, id) => {
+    try {
+      await axios.delete(apiHost + `/invitations/${id}`);
+      const result = await axios(apiHost + "/invitations");
+      handleEditCancel(undefined, id);
+      setInvitations(result.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const handleEditInvitation = async id => {
     try {
       const result = await axios(apiHost + "/invitations");
@@ -107,6 +118,7 @@ function AdminPage() {
           key={invitation.id}
           isEdit={true}
           handleCancel={handleEditCancel}
+          handleDelete={handleDelete}
         />
       );
     } else {

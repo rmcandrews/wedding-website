@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Autocomplete from "react-google-autocomplete";
 import axios from "axios";
-import { Button, Input, Form } from "semantic-ui-react";
+import { Button, Input, Form, Confirm } from "semantic-ui-react";
 import nanoid from "nanoid";
 
 import "./CreateInvitation.css";
@@ -130,7 +130,8 @@ class CreateInvitation extends Component {
               }
             ],
       isComplete: false,
-      saving: false
+      saving: false,
+      showCancelConfrim: false
     };
   }
 
@@ -307,13 +308,57 @@ class CreateInvitation extends Component {
             </Button>
           </div>
           <Button.Group fluid>
+            {this.props.id && (
+              <React.Fragment>
+                <Button
+                  type="button"
+                  onClick={() => this.setState({ showCancelConfrim: true })}
+                  negative
+                >
+                  Delete
+                </Button>
+                <Confirm
+                  className="deleteConfrimModal"
+                  open={this.state.showCancelConfrim}
+                  cancelButton={
+                    <Button
+                      fluid
+                      className="deleteModalButton"
+                      onClick={() =>
+                        this.setState({ showCancelConfrim: false })
+                      }
+                    >
+                      Cancel
+                    </Button>
+                  }
+                  confirmButton={
+                    <Button
+                      fluid
+                      className="deleteModalButton"
+                      negative
+                      onClick={e => {
+                        this.props.handleDelete(e, this.props.id);
+                        this.setState({ showCancelConfrim: false });
+                      }}
+                    >
+                      Delete
+                    </Button>
+                  }
+                  content={
+                    <div style={{ padding: 20, textAlign: "center" }}>
+                      Are you sure you want to delete <b>{this.state.name}'s</b>{" "}
+                      invitation?
+                    </div>
+                  }
+                />
+              </React.Fragment>
+            )}
             <Button
               onClick={e => this.props.handleCancel(e, this.props.id)}
               disabled={this.state.saving}
             >
               Cancel
             </Button>
-            <Button.Or />
             <Button
               type="submit"
               positive
