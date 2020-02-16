@@ -23,7 +23,7 @@ const attendingOptions = [
 const apiHost =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3001"
-    : "https://7j47jby7yj.execute-api.us-east-1.amazonaws.com/production";
+    : "https://fngvfv45l9.execute-api.us-east-1.amazonaws.com/production";
 
 function GuestFormGroup({
   handleChange,
