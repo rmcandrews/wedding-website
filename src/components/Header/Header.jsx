@@ -73,9 +73,9 @@ function Header() {
                 <li style={lgMenuItemStyle}>
                   <Link to="/gallery">GALLERY</Link>
                 </li>
-                {/* <li style={lgMenuItemStyle}>
+                <li style={lgMenuItemStyle}>
                   <Link to="/registry">REGISTRY</Link>
-                </li> */}
+                </li>
               </ul>
             </nav>
           </div>
@@ -168,14 +168,14 @@ function Header() {
                         GALLERY
                       </li>
                     </Link>
-                    {/* <li
+                    <li
                       className="menu-list-item"
                       style={{ animationDelay: "0.3s" }}
                     >
                       <Link to="/registry" onClick={() => setMenuOpen(false)}>
                         REGISTRY
                       </Link>
-                    </li> */}
+                    </li>
                     {/* <li
                       className="menu-list-item"
                       style={{ animationDelay: "0.3s" }}
