@@ -9,7 +9,8 @@ import {
   Button,
   Select,
   CardContent,
-  Icon
+  Icon,
+  Input
 } from "semantic-ui-react";
 import Modal from "react-responsive-modal";
 import { FaUtensils, FaCalendarDay } from "react-icons/fa";
@@ -42,7 +43,7 @@ const mealOptions = [
     value: "Fish",
     text: (
       <span>
-        Fish <span className="entreeDescriptor">• Blackened Barramundi</span>
+        Fish <span className="entreeDescriptor">• Miso-Glazed Black Cod</span>
       </span>
     )
   },
@@ -208,6 +209,10 @@ const RsvpForm = ({ selectedInvitation, history }) => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [invitation, setInvitation] = useState(selectedInvitation);
+  const [emailError, setEmailError] = useState(false);
+  const [buttonSuccessOpacity, setButtonSuccessOpacity] = useState(0);
+  const [buttonSaveOpacity, setButtonSaveOpacity] = useState(1);
+  const [buttonProgressOpacity, setButtonProgressOpacity] = useState(0);
   const [
     hasAtLeastOneRehersalInvite,
     setHasAtLeastOneRehersalInvite
@@ -275,6 +280,51 @@ const RsvpForm = ({ selectedInvitation, history }) => {
     callback();
   };
 
+  const onEmailBlur = async () => {
+    if (
+      // eslint-disable-next-line
+      !/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(
+        invitation.email
+      )
+    ) {
+      setEmailError(true);
+      return;
+    }
+    setEmailError(false);
+    try {
+      await axios.put(`${apiHost}/invitations/${invitation.id}`, invitation);
+    } catch (error) {
+      console.error(error);
+      toast({
+        type: "error",
+        title: "Error",
+        description: "There was an issue updating your RSVP.",
+        animation: "zoom",
+        time: 5000
+      });
+    }
+  };
+
+  const onEmailChange = event => {
+    let invitationToUpdate = clonedeep(invitation);
+    invitationToUpdate.email = event.target.value;
+    setInvitation(invitationToUpdate);
+  };
+
+  const saveButtonClicked = () => {
+    if (buttonSaveOpacity !== 1) return;
+    setButtonProgressOpacity(1);
+    setButtonSaveOpacity(0);
+    setTimeout(() => {
+      setButtonProgressOpacity(0);
+      setButtonSuccessOpacity(1);
+      setTimeout(() => {
+        setButtonSaveOpacity(1);
+        setButtonSuccessOpacity(0);
+      }, 2000);
+    }, Math.floor(Math.random() * 1500) + 1500);
+  };
+
   if (loading) return <Loader active inline="centered" />;
 
   return (
@@ -282,7 +332,7 @@ const RsvpForm = ({ selectedInvitation, history }) => {
       <h2 className="invitationTitle">{invitation.name}</h2>
       <div className="rsvpDirections">
         <div>Please RSVP for each guest bellow and choose a meal.</div>
-        <div style={{ padding: "1.5rem 0" }}>
+        <div style={{ padding: "1.5rem 0 1rem 0" }}>
           <MyButtom
             id="RSVP_Details-click"
             onClick={() => setDetailsModalOpen(true)}
@@ -325,6 +375,32 @@ const RsvpForm = ({ selectedInvitation, history }) => {
         </div>
       </div>
       <SemanticToastContainer position="bottom-right" />
+      <Card.Group itemsPerRow={1} stackable>
+        <Card className="emailAndNoteCard">
+          <CardContent>
+            <div style={{ width: "100%", textAlign: "center" }}>
+              Please provide an email at which you can be reached in the event
+              of changes due to the COVID<span>&#8209;</span>19 pandemic
+            </div>
+            <div style={{ paddingTop: "1rem", textAlign: "center" }}>
+              <Input
+                iconPosition="left"
+                placeholder="Email"
+                style={{ width: 300, maxWidth: "100%" }}
+                error={emailError}
+              >
+                <Icon name="at" />
+                <input
+                  onBlur={onEmailBlur}
+                  onChange={onEmailChange}
+                  value={invitation.email || ""}
+                  type="email"
+                />
+              </Input>
+            </div>
+          </CardContent>
+        </Card>
+      </Card.Group>
       <Card.Group itemsPerRow={2} stackable>
         {invitation.guests.map((guest, i) => (
           <RsvpGuest
@@ -336,6 +412,45 @@ const RsvpForm = ({ selectedInvitation, history }) => {
           />
         ))}
       </Card.Group>
+      <div style={{ width: "100%", textAlign: "center", marginTop: "2rem" }}>
+        <Button
+          positive
+          style={{ maxWidth: "100%", width: 300 }}
+          onClick={saveButtonClicked}
+        >
+          <div style={{ position: "relative", height: 26 }}>
+            <div
+              className="saveButtonText saveButtonContentItem"
+              style={{
+                top: 1,
+                opacity: buttonProgressOpacity,
+                transform: `scale(${buttonProgressOpacity})`
+              }}
+            >
+              <Icon loading name="circle notch" size="large" />
+            </div>
+            <div
+              className="saveButtonText saveButtonContentItem"
+              style={{
+                opacity: buttonSaveOpacity,
+                transform: `scale(${buttonSaveOpacity})`
+              }}
+            >
+              Save
+            </div>
+            <div
+              className="saveButtonText saveButtonContentItem"
+              style={{
+                top: 1,
+                opacity: buttonSuccessOpacity,
+                transform: `scale(${buttonSuccessOpacity})`
+              }}
+            >
+              <Icon size="large" name="heart outline" />
+            </div>
+          </div>
+        </Button>
+      </div>
     </div>
   );
 };

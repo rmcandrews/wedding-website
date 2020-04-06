@@ -10,10 +10,10 @@ const Menu = () => {
         Truffled Risotto Cake, Grilled Asparagus, Classic Horseradish Cream,
         Market Mushroom and Black Truffle Jus, Frizzled Leeks, Edible Florals
       </p>
-      <h4 className="menuItemTitle">Fish • Blackened Barramundi</h4>
+      <h4 className="menuItemTitle">Fish • Miso-Glazed Black Cod</h4>
       <p className="menuDescription">
-        Creamy Asparagus Risotto, Steamed Sugar Snap Peas, Lemongrass Beurre
-        Blanc
+        Heirloom Squash Puree, Sautéed Spinach, Slow- Roasted Potatoes,
+        Watercress and Green Garlic Coulis
       </p>
       <h4 className="menuItemTitle">Veggie • Black Truffle Strigoli</h4>
       <p className="menuDescription">

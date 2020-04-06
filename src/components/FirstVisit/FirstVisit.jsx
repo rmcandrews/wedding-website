@@ -111,6 +111,10 @@ const particleParameters = {
 const FirstVisit = ({ opacity }) => {
   const { innerWidth, innerHeight } = useWindowSize();
 
+  const imageHeight = 150;
+  const imageWidth = imageHeight * 0.5266666667;
+  const circleRadius = 120;
+
   return (
     <div
       style={{
@@ -131,12 +135,26 @@ const FirstVisit = ({ opacity }) => {
           position: "absolute",
           left: "50%",
           top: "50%",
-          height: 120,
-          width: 120,
+          height: circleRadius * 2,
+          width: circleRadius * 2,
           borderRadius: "50%",
           boxShadow: "inset 0 0 0 2px rgba(255,255,255,.2)",
-          marginLeft: "-60px",
-          marginTop: "-60px"
+          marginLeft: -circleRadius,
+          marginTop: -circleRadius
+        }}
+      />
+      <img
+        alt="logo"
+        src="img/Taya+Ryan.svg"
+        height={imageHeight}
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          width: imageWidth,
+          height: imageHeight,
+          marginTop: -(imageHeight / 2) + 5,
+          marginLeft: -(imageWidth / 2) - 5
         }}
       />
       <div
@@ -144,16 +162,16 @@ const FirstVisit = ({ opacity }) => {
           position: "absolute",
           left: "50%",
           top: "50%",
-          width: "60px",
-          height: "120px",
-          marginLeft: "-60px",
-          marginTop: "-60px",
+          width: circleRadius,
+          height: circleRadius * 2,
+          marginLeft: -circleRadius,
+          marginTop: -circleRadius,
           overflow: "hidden",
-          WebkitTransformOrigin: "60px 60px",
-          MozTransformOrigin: "60px 60px",
-          MsTransformOrigin: "60px 60px",
-          OTransformOrigin: "60px 60px",
-          transformOrigin: "60px 60px",
+          WebkitTransformOrigin: `${circleRadius}px ${circleRadius}px`,
+          MozTransformOrigin: `${circleRadius}px ${circleRadius}px`,
+          MsTransformOrigin: `${circleRadius}px ${circleRadius}px`,
+          OTransformOrigin: `${circleRadius}px ${circleRadius}px`,
+          transformOrigin: `${circleRadius}px ${circleRadius}px`,
           WebkitMaskImage:
             "-webkit-linear-gradient(top, #000000, rgba(0, 0, 0, 0))",
           WebkitAnimation: "rotate 1.2s infinite linear",
@@ -164,8 +182,8 @@ const FirstVisit = ({ opacity }) => {
       >
         <div
           style={{
-            width: "120px",
-            height: "120px",
+            width: circleRadius * 2,
+            height: circleRadius * 2,
             borderRadius: "50%",
             boxShadow: "inset 0 0 0 2px rgba(255, 255, 255, 0.5)"
           }}
