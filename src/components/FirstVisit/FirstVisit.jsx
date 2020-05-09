@@ -154,7 +154,7 @@ const FirstVisit = ({ opacity }) => {
           width: imageWidth,
           height: imageHeight,
           marginTop: -(imageHeight / 2) + 5,
-          marginLeft: -(imageWidth / 2) - 5
+          marginLeft: -(imageWidth / 2) - 2.5
         }}
       />
       <div

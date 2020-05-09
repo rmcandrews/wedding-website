@@ -1,0 +1,25 @@
+.shuttleDetailsContainer {
+  text-align: center;
+}
+
+.shuttleDetailsContainer > h1,
+h2,
+h3,
+h4,
+p {
+  font-weight: lighter;
+}
+
+.shuttleDetailsContainer > h2 {
+  margin-top: 2rem;
+  color: rgb(232, 202, 111);
+}
+
+.shuttleDetailsContainer > h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.shuttleDetailsContainer > p {
+  font-size: 16px;
+}

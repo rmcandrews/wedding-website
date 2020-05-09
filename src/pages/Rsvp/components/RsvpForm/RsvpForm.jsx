@@ -378,9 +378,13 @@ const RsvpForm = ({ selectedInvitation, history }) => {
       <Card.Group itemsPerRow={1} stackable>
         <Card className="emailAndNoteCard">
           <CardContent>
-            <div style={{ width: "100%", textAlign: "center" }}>
+            <div
+              style={{ width: "100%", textAlign: "center", lineHeight: "150%" }}
+            >
               Please provide an email at which you can be reached in the event
-              of changes due to the COVID<span>&#8209;</span>19 pandemic
+              of changes due to the COVID<span>&#8209;</span>19 pandemic. You
+              can also contact us at <b>rmcandre915@gmail.com</b> or{" "}
+              <b>taya.aleksa@gmail.com</b>
             </div>
             <div style={{ paddingTop: "1rem", textAlign: "center" }}>
               <Input

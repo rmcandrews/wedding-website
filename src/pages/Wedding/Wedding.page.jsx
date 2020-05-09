@@ -1,12 +1,15 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
+import { useState } from "react";
 import { Button, Countdown, Footer } from "../../components";
-import { FaMap } from "react-icons/fa";
+import { FaMap, FaBus } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
 import { isMobile } from "react-device-detect";
 import { Parallax } from "react-parallax";
 
 import coverImage from "./cover.jpg";
+import ShuttleDetails from "./ShuttleDetails/ShuttleDetails";
+import Modal from "react-responsive-modal";
 
 const detailContainerCss = {
   display: "inline-block",
@@ -31,6 +34,7 @@ const detailContentCss = {
 };
 
 function WeddingPage() {
+  const [shuttleDetailsModalOpen, setShuttleDetailsModalOpen] = useState(false);
   let mapAndUberLinkTarget = !isMobile ? "_blank" : "_self";
 
   return (
@@ -234,17 +238,11 @@ function WeddingPage() {
             <FaMap /> MAP
           </Button>
           <Button
-            type="ghost"
-            id="Queen_of_All_Saints_Uber-click"
-            onClick={() => {
-              window.open(
-                "https://m.uber.com/ul/?action=setPickup&client_id=xHi2Lo0Eu_rfUeCrxghCA8jKjWULjNAp&pickup=my_location&dropoff[formatted_address]=Queen%20of%20All%20Saints%20Basilica%2C%20North%20Sauganash%20Avenue%2C%20Chicago%2C%20IL%2C%20USA&dropoff[latitude]=41.995437&dropoff[longitude]=-87.744620",
-                mapAndUberLinkTarget
-              );
-            }}
+            id="Queen_of_All_Saints_Shuttle-click"
+            onClick={() => setShuttleDetailsModalOpen(true)}
             style={{ marginLeft: 5 }}
           >
-            <i className="fab fa-uber" /> UBER
+            <FaBus style={{ fontSize: 12 }} /> SHUTTLE
           </Button>
         </div>
       </section>
@@ -338,19 +336,20 @@ function WeddingPage() {
             <FaMap style={{ fontSize: 12 }} /> MAP
           </Button>
           <Button
-            type="ghost"
-            id="City_Hall_Uber-click"
-            onClick={() => {
-              window.open(
-                "https://m.uber.com/ul/?action=setPickup&client_id=xHi2Lo0Eu_rfUeCrxghCA8jKjWULjNAp&pickup=my_location&dropoff[formatted_address]=838%20West%20Kinzie%20Street%2C%20Chicago%2C%20IL%2C%20USA&dropoff[latitude]=41.889278&dropoff[longitude]=-87.649044",
-                mapAndUberLinkTarget
-              );
-            }}
+            id="City_Hall_Shuttle-click"
+            onClick={() => setShuttleDetailsModalOpen(true)}
             style={{ marginLeft: 5 }}
           >
-            <i className="fab fa-uber" /> UBER
+            <FaBus style={{ fontSize: 12 }} /> SHUTTLE
           </Button>
         </div>
+        <Modal
+          open={shuttleDetailsModalOpen}
+          onClose={() => setShuttleDetailsModalOpen(false)}
+          center
+        >
+          <ShuttleDetails />
+        </Modal>
       </section>
       <Footer />
     </div>
