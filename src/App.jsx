@@ -14,7 +14,7 @@ import {
   RegistryPage,
   GalleryPage,
   RsvpPage,
-  AdminPage
+  AdminPage,
 } from "./pages";
 
 let loadScreenOpacityTracker = 1;
@@ -34,7 +34,7 @@ function App() {
   }
 
   if (!hasVisited) {
-    setTimeout(function() {
+    setTimeout(function () {
       localStorage.setItem("hasVisited", true);
       setHasVisited(true);
     }, 3000);
@@ -48,8 +48,8 @@ function App() {
       loadFadeRate = 0.05;
     }
 
-    setTimeout(function() {
-      interval = setInterval(function() {
+    setTimeout(function () {
+      interval = setInterval(function () {
         loadScreenOpacityTracker -= loadFadeRate;
         setLoadScreenOpacity(loadScreenOpacityTracker);
       }, 50);

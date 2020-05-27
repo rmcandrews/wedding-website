@@ -17,20 +17,20 @@ const detailContainerCss = {
   width: ["100%", "100%", "100%", "50%"],
   fontWeight: 300,
   fontSize: 16,
-  marginTop: [25, 25, 25, 0]
+  marginTop: [25, 25, 25, 0],
 };
 
 const detailTitleStyle = {
   fontSize: 20,
   marginBottom: 20,
   color: "#e8ca6f",
-  fontWeight: 400
+  fontWeight: 400,
 };
 
 const detailContentStyle = { fontSize: 16, lineHeight: "24px" };
 
 const detailContentCss = {
-  padding: "0px 5%"
+  padding: "0px 5%",
 };
 
 function WeddingPage() {
@@ -44,7 +44,7 @@ function WeddingPage() {
         bgImage={coverImage}
         bgImageStyle={{
           objectFit: "cover",
-          objectPosition: "center center"
+          objectPosition: "center center",
         }}
       >
         <section css={{ minHeight: [550, 750, 800] }}>
@@ -52,6 +52,21 @@ function WeddingPage() {
             style={{ textAlign: "center", width: "100%" }}
             css={{ paddingTop: [400, 550, 500] }}
           >
+            <div
+              css={{
+                display: ["inline-block", "inline-block", "none"],
+              }}
+              style={{
+                backgroundColor: "#e8ca6f",
+                padding: 10,
+                borderRadius: 20,
+                width: 140,
+                color: "white",
+                marginBottom: 10,
+              }}
+            >
+              DATE CHANGED!
+            </div>
             <Countdown />
             {/* <Button
               type="fill"
@@ -67,7 +82,7 @@ function WeddingPage() {
                 width: "100%",
                 padding: "10px 0",
                 color: "white",
-                fontSize: 30
+                fontSize: 30,
               }}
               className="scroll-indicator"
             >
@@ -81,7 +96,7 @@ function WeddingPage() {
           style={{ textAlign: "center", fontSize: 30, lineHeight: 1.2 }}
           css={{ fontWeight: 200, margin: ["50px 5%", "50px 20%"] }}
         >
-          Please join Taya and Ryan on July 25th, 2020 as they celebrate their
+          Please join Taya and Ryan on July 17th, 2021 as they celebrate their
           wedding in Chicago.
         </div>
         <div
@@ -90,14 +105,14 @@ function WeddingPage() {
             fontSize: 30,
             fontWeight: 200,
             marginBottom: 50,
-            margin: "0px 5%"
+            margin: "0px 5%",
           }}
         >
           <div style={{ marginTop: 20 }}>
             <div
               css={{
                 ...detailContainerCss,
-                width: ["100%", "100%", "33.33%", "33.33%"]
+                width: ["100%", "100%", "33.33%", "33.33%"],
               }}
             >
               <img
@@ -117,7 +132,7 @@ function WeddingPage() {
             <div
               css={{
                 ...detailContainerCss,
-                width: ["100%", "100%", "33.33%", "33.33%"]
+                width: ["100%", "100%", "33.33%", "33.33%"],
               }}
             >
               <img
@@ -137,7 +152,7 @@ function WeddingPage() {
             <div
               css={{
                 ...detailContainerCss,
-                width: ["100%", "100%", "33.33%", "33.33%"]
+                width: ["100%", "100%", "33.33%", "33.33%"],
               }}
             >
               <img
@@ -165,7 +180,7 @@ function WeddingPage() {
       >
         <div
           css={{
-            minHeight: [400, 450, 500]
+            minHeight: [400, 450, 500],
           }}
         >
           <div
@@ -175,7 +190,7 @@ function WeddingPage() {
               backgroundColor: "rgba(0,0,0,0.5)",
               display: "flex",
               justifyContent: "center",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             <div style={{ color: "white", textAlign: "center" }}>
@@ -195,7 +210,7 @@ function WeddingPage() {
             fontSize: 20,
             color: "#e8ca6f",
             fontWeight: 400,
-            marginTop: 50
+            marginTop: 50,
           }}
         >
           QUEEN OF ALL SAINTS
@@ -204,7 +219,7 @@ function WeddingPage() {
           style={{
             fontSize: 16,
             fontWeight: 500,
-            marginTop: 15
+            marginTop: 15,
           }}
         >
           3:00 PM
@@ -214,7 +229,7 @@ function WeddingPage() {
             fontSize: 16,
             fontWeight: 400,
             marginTop: 15,
-            lineHeight: "28px"
+            lineHeight: "28px",
           }}
         >
           6280 N Sauganash Ave
@@ -254,10 +269,10 @@ function WeddingPage() {
       >
         <section
           css={{
-            minHeight: [400, 450, 500]
+            minHeight: [400, 450, 500],
           }}
           style={{
-            backgroundSize: "cover"
+            backgroundSize: "cover",
           }}
         >
           <div
@@ -267,7 +282,7 @@ function WeddingPage() {
               backgroundColor: "rgba(0,0,0,0.5)",
               display: "flex",
               justifyContent: "center",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             <div style={{ color: "white", textAlign: "center" }}>
@@ -287,7 +302,7 @@ function WeddingPage() {
             fontSize: 20,
             color: "#e8ca6f",
             fontWeight: 400,
-            marginTop: 50
+            marginTop: 50,
           }}
         >
           CITY HALL
@@ -296,7 +311,7 @@ function WeddingPage() {
           style={{
             fontSize: 16,
             fontWeight: 500,
-            marginTop: 15
+            marginTop: 15,
           }}
         >
           6:00 PM
@@ -306,7 +321,7 @@ function WeddingPage() {
             fontSize: 16,
             fontWeight: 400,
             marginTop: 15,
-            lineHeight: "28px"
+            lineHeight: "28px",
           }}
         >
           838 W Kinzie St

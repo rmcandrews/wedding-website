@@ -33,22 +33,23 @@ function Header() {
   return (
     <Headroom
       style={{
-        backgroundColor: `rgba(0,0,0,${Math.min((scrollY * 4) / 100, 0.6)}`
+        backgroundColor: `rgba(0,0,0,${Math.min((scrollY * 4) / 100, 0.6)}`,
       }}
     >
       <header
         css={{
           fontWeight: "semibold",
           fontFamily: "sansSerif",
-          padding: [`${mobileHeaderPadding}px 0px`, `${headerPadding}px 0px`]
+          padding: [`${mobileHeaderPadding}px 0px`, `${headerPadding}px 0px`],
         }}
         style={{
           opacity: 0.99,
           color: "white",
-          borderBottom: `1px solid rgba(255,255,255,${0.8 -
-            (scrollY * 4) / 100}`,
+          borderBottom: `1px solid rgba(255,255,255,${
+            0.8 - (scrollY * 4) / 100
+          }`,
           marginLeft: "5%",
-          marginRight: "5%"
+          marginRight: "5%",
         }}
       >
         <div>
@@ -61,7 +62,7 @@ function Header() {
                 style={{
                   margin: "0 0 0 75px",
                   listStyle: "none",
-                  display: "inline-block"
+                  display: "inline-block",
                 }}
               >
                 <li style={lgMenuItemStyle}>
@@ -80,7 +81,7 @@ function Header() {
             </nav>
           </div>
           {/* <Button
-            csss={{ display: ["none", "none", "inline-block"] }}
+            css={{ display: ["none", "none", "inline-block"] }}
             style={{ float: "right", marginTop: -8 }}
             type="ghost"
             color="white"
@@ -88,12 +89,26 @@ function Header() {
           >
             RSVP
           </Button> */}
+          <div
+            css={{
+              display: ["none", "none", "inline-block"],
+              float: ["left", "left", "right"],
+            }}
+            style={{
+              backgroundColor: "#e8ca6f",
+              padding: 10,
+              borderRadius: 20,
+              marginTop: -10,
+            }}
+          >
+            DATE CHANGED!
+          </div>
           <MorphIcon
             style={{
               position: "fixed",
               marginTop: "-16px",
               right: "6%",
-              zIndex: 10
+              zIndex: 10,
             }}
             css={{ display: ["inline", "inline", "none"] }}
             type={isMenuOpen ? "crossSparks" : "bars"}
@@ -119,7 +134,7 @@ function Header() {
                   top: 0,
                   left: 0,
                   backgroundColor: "rgba(0, 0, 0, 0.9)",
-                  zIndex: 1
+                  zIndex: 1,
                 }}
               >
                 <nav style={{ position: "relative", top: 150 }}>
@@ -129,7 +144,7 @@ function Header() {
                       margin: 0,
                       padding: 0,
                       listStyle: "none",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     <Link

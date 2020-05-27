@@ -10,13 +10,13 @@ const circleCss = {
   width: circleSize,
   display: "inline-block",
   marginLeft: "10px",
-  marginRight: "10px"
+  marginRight: "10px",
 };
 
 const Countdown = ({ style }) => {
-  const expiryTimestamp = new Date("07/25/2020 15:00 UTC-5").getTime();
+  const expiryTimestamp = new Date("07/17/2021 15:00 UTC-5").getTime();
   const { minutes, hours, days } = useTimer({
-    expiryTimestamp
+    expiryTimestamp,
   });
 
   return (

@@ -10,7 +10,7 @@ const Details = ({ showRehersal }) => {
           <div
             style={{
               fontSize: 20,
-              fontWeight: 400
+              fontWeight: 400,
             }}
           >
             Friday July 24th, 7:00 PM
@@ -19,7 +19,7 @@ const Details = ({ showRehersal }) => {
             style={{
               fontSize: 16,
               fontWeight: 500,
-              marginTop: 20
+              marginTop: 20,
             }}
           >
             HOME SLICE PIZZA
@@ -29,7 +29,7 @@ const Details = ({ showRehersal }) => {
               fontSize: 16,
               fontWeight: 400,
               marginTop: 15,
-              lineHeight: "28px"
+              lineHeight: "28px",
             }}
           >
             938 W Webster Ave
@@ -49,23 +49,23 @@ const Details = ({ showRehersal }) => {
       <section
         style={{
           textAlign: "center",
-          marginTop: showRehersal ? "2rem" : ""
+          marginTop: showRehersal ? "2rem" : "",
         }}
       >
         <h3 className="detailsTitle">Wedding</h3>
         <div
           style={{
             fontSize: 20,
-            fontWeight: 400
+            fontWeight: 400,
           }}
         >
-          Saturday July 25th, 3:00 PM
+          Saturday July 17th, 3:00 PM
         </div>
         <div
           style={{
             fontSize: 16,
             fontWeight: 500,
-            marginTop: 15
+            marginTop: 15,
           }}
         >
           QUEEN OF ALL SAINTS
@@ -75,7 +75,7 @@ const Details = ({ showRehersal }) => {
             fontSize: 16,
             fontWeight: 400,
             marginTop: 20,
-            lineHeight: "28px"
+            lineHeight: "28px",
           }}
         >
           6280 N Sauganash Ave
@@ -90,16 +90,16 @@ const Details = ({ showRehersal }) => {
         <div
           style={{
             fontSize: 20,
-            fontWeight: 400
+            fontWeight: 400,
           }}
         >
-          Saturday July 25th, 6:00 PM
+          Saturday July 17th, 6:00 PM
         </div>
         <div
           style={{
             fontSize: 16,
             fontWeight: 500,
-            marginTop: 20
+            marginTop: 20,
           }}
         >
           CITY HALL
@@ -109,7 +109,7 @@ const Details = ({ showRehersal }) => {
             fontSize: 16,
             fontWeight: 400,
             marginTop: 15,
-            lineHeight: "28px"
+            lineHeight: "28px",
           }}
         >
           838 W Kinzie St
