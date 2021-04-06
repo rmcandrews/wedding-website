@@ -11,20 +11,20 @@ const detailContainerCss = {
   width: ["100%", "100%", "100%", "50%"],
   marginBottom: ["1rem", "1rem", "1rem", "0rem"],
   fontWeight: 300,
-  marginTop: [25, 25, 25, 0]
+  marginTop: [25, 25, 25, 0],
 };
 
 const detailTitleStyle = {
   fontSize: 20,
   marginBottom: 20,
   color: "#e8ca6f",
-  fontWeight: 400
+  fontWeight: 400,
 };
 
 const detailContentStyle = { fontSize: "1.25rem", lineHeight: "2rem" };
 
 const detailContentCss = {
-  padding: ["0px 10%", "0px 10%", "0px 20%", "0px 20%"]
+  padding: ["0px 10%", "0px 10%", "0px 20%", "0px 20%"],
 };
 
 function LocationPage() {
@@ -37,18 +37,18 @@ function LocationPage() {
             "url('img/chicago-small.jpg') center center",
             "url('img/chicago-medium.jpg') center center",
             "url('img/chicago-medium.jpg') center center",
-            "url('img/chicago-large.jpg') center center"
-          ]
+            "url('img/chicago-large.jpg') center center",
+          ],
         }}
         style={{
-          backgroundSize: "cover"
+          backgroundSize: "cover",
         }}
       >
         <div
           css={{ height: [550, 650, 700] }}
           style={{
             width: "100%",
-            backgroundColor: "rgba(0,0,0,0.5)"
+            backgroundColor: "rgba(0,0,0,0.5)",
           }}
         >
           <div
@@ -58,7 +58,7 @@ function LocationPage() {
               marginRight: "auto",
               display: "flex",
               justifyContent: "center",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             <div style={{ color: "white", textAlign: "center" }}>
@@ -75,7 +75,7 @@ function LocationPage() {
               width: "100%",
               textAlign: "center",
               color: "white",
-              fontSize: 30
+              fontSize: 30,
             }}
             className="scroll-indicator"
           >
@@ -95,7 +95,7 @@ function LocationPage() {
             textAlign: "center",
             fontSize: 30,
             fontWeight: 200,
-            marginBottom: 50
+            marginBottom: 50,
           }}
         >
           <div>AIRPORTS</div>
@@ -124,7 +124,7 @@ function LocationPage() {
       >
         <section
           css={{
-            minHeight: [400, 450, 500]
+            minHeight: [400, 450, 500],
           }}
         >
           <div
@@ -134,7 +134,7 @@ function LocationPage() {
               backgroundColor: "rgba(0,0,0,0.3)",
               display: "flex",
               justifyContent: "center",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             <div style={{ color: "white", textAlign: "center" }}>
@@ -155,14 +155,14 @@ function LocationPage() {
             marginTop: "50px",
             marginBottom: "50px",
             fontSize: "1.25rem",
-            lineHeight: "1.5rem"
+            lineHeight: "1.5rem",
           }}
           css={{
             fontWeight: 200,
             marginLeft: ["10%", "20%", "30%"],
             marginRight: ["10%", "20%", "30%"],
             fontSize: "1.25rem",
-            lineHeight: "1.5rem"
+            lineHeight: "1.5rem",
           }}
         >
           We have rooms blocked off for wedding guests at The Gwen and a
@@ -173,7 +173,7 @@ function LocationPage() {
             textAlign: "center",
             fontSize: 30,
             fontWeight: 200,
-            marginBottom: 50
+            marginBottom: 50,
           }}
         >
           <div style={{ marginTop: 20 }}>
@@ -201,14 +201,14 @@ function LocationPage() {
                   lineHeight: 2.5,
                   color: "#e8ca6f",
                   marginTop: 10,
-                  fontSize: "1.25rem"
+                  fontSize: "1.25rem",
                 }}
               >
                 <Button
                   id="Book-Gwen-click"
                   onClick={() => {
                     window.open(
-                      "https://www.marriott.com/event-reservations/reservation-link.mi?id=1575313545776&key=GRP&app=resvlink",
+                      "https://www.marriott.com/event-reservations/reservation-link.mi?id=1617729566302&key=GRP&app=resvlink",
                       "blank"
                     );
                   }}
@@ -263,7 +263,7 @@ function LocationPage() {
       >
         <section
           css={{
-            minHeight: [400, 450, 500]
+            minHeight: [400, 450, 500],
           }}
         >
           <div
@@ -273,7 +273,7 @@ function LocationPage() {
               backgroundColor: "rgba(0,0,0,0.5)",
               display: "flex",
               justifyContent: "center",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             <div style={{ color: "white", textAlign: "center" }}>
@@ -294,13 +294,13 @@ function LocationPage() {
             marginTop: "50px",
             marginBottom: "50px",
             fontSize: "1.25rem",
-            lineHeight: "1.5rem"
+            lineHeight: "1.5rem",
           }}
           css={{
             fontWeight: 200,
             marginLeft: ["10%", "20%", "20%"],
             marginRight: ["10%", "20%", "20%"],
-            lineHeight: [1.5]
+            lineHeight: [1.5],
           }}
         >
           Chicago is a city unlike any other. It has architectural marvels,
@@ -315,14 +315,14 @@ function LocationPage() {
             textAlign: "center",
             fontSize: 30,
             fontWeight: 200,
-            marginBottom: 50
+            marginBottom: 50,
           }}
         >
           <div style={{ marginTop: 20 }}>
             <div
               css={{
                 ...detailContainerCss,
-                width: ["100%", "100%", "100%", "33.33%"]
+                width: ["100%", "100%", "100%", "33.33%"],
               }}
             >
               <div style={detailTitleStyle}>PARKS</div>
@@ -357,7 +357,7 @@ function LocationPage() {
             <div
               css={{
                 ...detailContainerCss,
-                width: ["100%", "100%", "100%", "33.33%"]
+                width: ["100%", "100%", "100%", "33.33%"],
               }}
             >
               <div style={detailTitleStyle}>ARCHITECTURE TOUR</div>
@@ -382,7 +382,7 @@ function LocationPage() {
             <div
               css={{
                 ...detailContainerCss,
-                width: ["100%", "100%", "100%", "33.33%"]
+                width: ["100%", "100%", "100%", "33.33%"],
               }}
             >
               <div style={detailTitleStyle}>MUSEUMS</div>
