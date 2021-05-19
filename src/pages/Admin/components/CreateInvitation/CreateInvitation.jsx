@@ -11,13 +11,13 @@ const mealOptions = [
   { key: "Beef", value: "Beef", text: "Beef" },
   { key: "Fish", value: "Fish", text: "Fish" },
   { key: "Veggie", value: "Veggie", text: "Veggie" },
-  { key: "Kid", value: "Kid", text: "Kid" }
+  { key: "Kid", value: "Kid", text: "Kid" },
 ];
 
 const attendingOptions = [
   { key: "Yes", value: "Yes", text: "Yes" },
   { key: "No", value: "No", text: "No" },
-  { key: "Unknown", value: "Unknown", text: "Unknown" }
+  { key: "Unknown", value: "Unknown", text: "Unknown" },
 ];
 
 const apiHost =
@@ -30,7 +30,7 @@ function GuestFormGroup({
   index,
   handleRemove,
   allowRemove,
-  value
+  value,
 }) {
   return (
     <div className="guest">
@@ -94,7 +94,7 @@ function GuestFormGroup({
           size="mini"
           negative
           className="guestRemoveButton"
-          onClick={e => handleRemove(e, index)}
+          onClick={(e) => handleRemove(e, index)}
           disabled={!allowRemove}
           fluid
         >
@@ -126,12 +126,12 @@ class CreateInvitation extends Component {
                 weddingInvite: true,
                 rehersalInvite: false,
                 mealSelection: "Unknown",
-                id: nanoid(10)
-              }
+                id: nanoid(10),
+              },
             ],
       isComplete: false,
       saving: false,
-      showCancelConfrim: false
+      showCancelConfrim: false,
     };
   }
 
@@ -143,7 +143,7 @@ class CreateInvitation extends Component {
     let isComplete = true;
     if (!this.state.name) isComplete = false;
     if (this.state.guests.length === 0) isComplete = false;
-    this.state.guests.forEach(guest => {
+    this.state.guests.forEach((guest) => {
       if (!guest.firstName) isComplete = false;
       if (!guest.lastName) isComplete = false;
     });
@@ -161,13 +161,13 @@ class CreateInvitation extends Component {
     const { name, address, line2, guests } = this.state;
     let completeAddress = {
       ...address,
-      line2
+      line2,
     };
     if (this.state.isComplete) {
       const data = {
         name,
         address: completeAddress,
-        guests
+        guests,
       };
       try {
         if (!this.props.isEdit) {
@@ -193,7 +193,7 @@ class CreateInvitation extends Component {
     });
   };
 
-  addGuest = e => {
+  addGuest = (e) => {
     e.preventDefault();
     let { guests } = this.state;
     guests.push({
@@ -202,7 +202,7 @@ class CreateInvitation extends Component {
       weddingInvite: true,
       rehersalInvite: false,
       mealSelection: "Unknown",
-      id: nanoid(10)
+      id: nanoid(10),
     });
     this.setState({ guests }, () => {
       this.checkComplete();
@@ -245,10 +245,11 @@ class CreateInvitation extends Component {
                     ? "addressAutocomplete"
                     : ""
                 }
+                apiKey="AIzaSyAIeZ9AdBdLh0oFsyzVWWjgbgqFQIM1Nr4"
                 placeholder={address.line1 ? address.line1 : "Address"}
-                onPlaceSelected={place => {
+                onPlaceSelected={(place) => {
                   let tempAddress = {};
-                  place.address_components.forEach(addressComponent => {
+                  place.address_components.forEach((addressComponent) => {
                     if (addressComponent.types.includes("street_number"))
                       tempAddress.streetNumber = addressComponent.short_name;
                     else if (addressComponent.types.includes("route"))
@@ -268,11 +269,11 @@ class CreateInvitation extends Component {
                     line1: `${tempAddress.streetNumber} ${tempAddress.route}`,
                     city: tempAddress.city,
                     state: tempAddress.state,
-                    zip: tempAddress.zip
+                    zip: tempAddress.zip,
                   };
                   this.handleChange(undefined, {
                     name: "address",
-                    value: address
+                    value: address,
                   });
                 }}
                 types={["address"]}
@@ -336,7 +337,7 @@ class CreateInvitation extends Component {
                       fluid
                       className="deleteModalButton"
                       negative
-                      onClick={e => {
+                      onClick={(e) => {
                         this.props.handleDelete(e, this.props.id);
                         this.setState({ showCancelConfrim: false });
                       }}
@@ -354,7 +355,7 @@ class CreateInvitation extends Component {
               </React.Fragment>
             )}
             <Button
-              onClick={e => this.props.handleCancel(e, this.props.id)}
+              onClick={(e) => this.props.handleCancel(e, this.props.id)}
               disabled={this.state.saving}
             >
               Cancel
