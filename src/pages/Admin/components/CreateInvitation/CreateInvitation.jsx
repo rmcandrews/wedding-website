@@ -36,6 +36,13 @@ function GuestFormGroup({
     <div className="guest">
       <div>
         <Form.Group className="guestFromField">
+          <Form.Checkbox
+            onChange={handleChange}
+            name={`isUnknownGuest-${index}`}
+            label="Unknown Guest?"
+            className="isUnknownGuest"
+            checked={value.isUnknownGuest}
+          />
           <Form.Field
             onChange={handleChange}
             control={Input}
@@ -44,6 +51,7 @@ function GuestFormGroup({
             placeholder="First Name"
             width={5}
             value={value.firstName}
+            disabled={value.isUnknownGuest}
           />
           <Form.Field
             onChange={handleChange}
@@ -53,6 +61,7 @@ function GuestFormGroup({
             placeholder="Last Name"
             width={6}
             value={value.lastName}
+            disabled={value.isUnknownGuest}
           />
           <Form.Select
             onChange={handleChange}
@@ -144,8 +153,10 @@ class CreateInvitation extends Component {
     if (!this.state.name) isComplete = false;
     if (this.state.guests.length === 0) isComplete = false;
     this.state.guests.forEach((guest) => {
-      if (!guest.firstName) isComplete = false;
-      if (!guest.lastName) isComplete = false;
+      if (!guest.isUnknownGuest) {
+        if (!guest.firstName) isComplete = false;
+        if (!guest.lastName) isComplete = false;
+      }
     });
     this.setState({ isComplete });
   };
@@ -187,6 +198,7 @@ class CreateInvitation extends Component {
     let { guests } = this.state;
     let fieldName = name.split("-")[0];
     let index = parseInt(name.split("-")[1]);
+    console.log(fieldName);
     guests[index][fieldName] = value || checked;
     this.setState({ guests }, () => {
       this.checkComplete();
