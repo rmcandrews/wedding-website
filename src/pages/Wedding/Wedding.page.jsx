@@ -46,6 +46,7 @@ function WeddingPage({ history }) {
         bgImageStyle={{
           objectFit: "cover",
           objectPosition: "center center",
+          minHeight: 550,
         }}
       >
         <section css={{ minHeight: [550, 750, 800] }}>
