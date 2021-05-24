@@ -388,7 +388,7 @@ const RsvpForm = ({ selectedInvitation, history }) => {
         </div>
       </div>
       <SemanticToastContainer position="bottom-right" />
-      <Card.Group itemsPerRow={1} stackable>
+      <Card.Group itemsPerRow={1} stackable style={{ marginBottom: "1rem" }}>
         <Card className="emailAndNoteCard">
           <CardContent>
             <div
