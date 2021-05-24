@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useState } from "react";
+import { withRouter } from "react-router-dom";
 import { Button, Countdown, Footer } from "../../components";
 import { FaMap, FaBus } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
@@ -33,7 +34,7 @@ const detailContentCss = {
   padding: "0px 5%",
 };
 
-function WeddingPage() {
+function WeddingPage({ history }) {
   const [shuttleDetailsModalOpen, setShuttleDetailsModalOpen] = useState(false);
   let mapAndUberLinkTarget = !isMobile ? "_blank" : "_self";
 
@@ -52,7 +53,7 @@ function WeddingPage() {
             style={{ textAlign: "center", width: "100%" }}
             css={{ paddingTop: [400, 550, 500] }}
           >
-            <div
+            {/* <div
               css={{
                 display: ["inline-block", "inline-block", "none"],
               }}
@@ -66,16 +67,17 @@ function WeddingPage() {
               }}
             >
               DATE CHANGED!
-            </div>
-            <Countdown />
-            {/* <Button
+            </div> */}
+            <Button
               type="fill"
               size="large"
               color="#e8ca6f"
               hoverColor="#e8ca6f"
+              onClick={() => history.push("/rsvp")}
             >
               RSVP
-            </Button> */}
+            </Button>
+            <Countdown />
             <div
               style={{
                 textAlign: "center",
@@ -371,4 +373,4 @@ function WeddingPage() {
   );
 }
 
-export default WeddingPage;
+export default withRouter(WeddingPage);

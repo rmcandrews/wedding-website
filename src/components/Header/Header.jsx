@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 /** @jsx jsx */
 import { jsx } from "theme-ui";
+import { Button } from "../index";
 import Headroom from "react-headroom";
 import { MorphIcon } from "react-svg-buttons";
 import useWindowSize from "@rooks/use-window-size";
@@ -11,7 +13,7 @@ import { useScrollYPosition } from "react-use-scroll-position";
 const dib = { display: "inline-block" };
 const lgMenuItemStyle = { display: "inline", paddingRight: "25px" };
 
-function Header() {
+function Header({ history }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { innerWidth } = useWindowSize();
   const scrollY = useScrollYPosition();
@@ -80,29 +82,17 @@ function Header() {
               </ul>
             </nav>
           </div>
-          {/* <Button
+          <Button
             css={{ display: ["none", "none", "inline-block"] }}
             style={{ float: "right", marginTop: -8 }}
-            type="ghost"
-            color="white"
+            type="fill"
+            size="small"
+            color="#e8ca6f"
             hoverColor="#e8ca6f"
+            onClick={() => history.push("/rsvp")}
           >
             RSVP
-          </Button> */}
-          <div
-            css={{
-              display: ["none", "none", "inline-block"],
-              float: ["left", "left", "right"],
-            }}
-            style={{
-              backgroundColor: "#e8ca6f",
-              padding: 10,
-              borderRadius: 20,
-              marginTop: -10,
-            }}
-          >
-            DATE CHANGED!
-          </div>
+          </Button>
           <MorphIcon
             style={{
               position: "fixed",
@@ -191,14 +181,22 @@ function Header() {
                         REGISTRY
                       </Link>
                     </li>
-                    {/* <li
+                    <li
                       className="menu-list-item"
                       style={{ animationDelay: "0.3s" }}
                     >
-                      <Button type="fill" color="#e8ca6f" hoverColor="#e8ca6f">
+                      <Button
+                        type="fill"
+                        color="#e8ca6f"
+                        hoverColor="#e8ca6f"
+                        onClick={() => {
+                          setMenuOpen(false);
+                          history.push("/rsvp");
+                        }}
+                      >
                         RSVP
                       </Button>
-                    </li> */}
+                    </li>
                   </ul>
                 </nav>
               </div>
@@ -213,4 +211,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default withRouter(Header);
