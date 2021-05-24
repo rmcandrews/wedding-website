@@ -20,10 +20,13 @@ const attendingOptions = [
   { key: "Unknown", value: "Unknown", text: "Unknown" },
 ];
 
+// const apiHost =
+//   process.env.NODE_ENV === "development"
+//     ? "http://localhost:3001"
+//     : "https://fngvfv45l9.execute-api.us-east-1.amazonaws.com/production";
+
 const apiHost =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:3001"
-    : "https://fngvfv45l9.execute-api.us-east-1.amazonaws.com/production";
+  "https://fngvfv45l9.execute-api.us-east-1.amazonaws.com/production";
 
 function GuestFormGroup({
   handleChange,

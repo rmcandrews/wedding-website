@@ -6,10 +6,13 @@ import { Invitation } from "./components/Invitation";
 import { CreateInvitation } from "./components/CreateInvitation";
 import { Button } from "semantic-ui-react";
 
+// const apiHost =
+//   process.env.NODE_ENV === "development"
+//     ? "http://localhost:3001"
+//     : "https://fngvfv45l9.execute-api.us-east-1.amazonaws.com/production";
+
 const apiHost =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:3001"
-    : "https://fngvfv45l9.execute-api.us-east-1.amazonaws.com/production";
+  "https://fngvfv45l9.execute-api.us-east-1.amazonaws.com/production";
 
 function AdminPage() {
   const [invitations, setInvitations] = useState([]);
@@ -24,7 +27,7 @@ function AdminPage() {
     fetchInvitations();
   }, []);
 
-  const handleCreateInvitation = async id => {
+  const handleCreateInvitation = async (id) => {
     try {
       const result = await axios(apiHost + "/invitations");
       setInvitations(result.data);
@@ -55,7 +58,7 @@ function AdminPage() {
     }
   };
 
-  const handleEditInvitation = async id => {
+  const handleEditInvitation = async (id) => {
     try {
       const result = await axios(apiHost + "/invitations");
       handleEditCancel(undefined, id);
@@ -65,15 +68,15 @@ function AdminPage() {
     }
   };
 
-  const handleEditOpen = id => {
+  const handleEditOpen = (id) => {
     setInvitationsEditing([...invitationsEditing, id]);
   };
 
   const exportCsv = () => {
     let csv =
       "Invite Name, First Name, Last Name, Meal, Wedding Invite, Attending Wedding, Rehersal Invite, Attending Rehersal, Address Line 1, Address Line 2, City, State, Zip\n";
-    invitations.forEach(invitation => {
-      invitation.guests.forEach(guest => {
+    invitations.forEach((invitation) => {
+      invitation.guests.forEach((guest) => {
         csv += `"${invitation.name}",`;
         csv += `"${guest.firstName}",`;
         csv += `"${guest.lastName}",`;
@@ -108,7 +111,7 @@ function AdminPage() {
     document.body.removeChild(element);
   };
 
-  const invitationItems = invitations.map(invitation => {
+  const invitationItems = invitations.map((invitation) => {
     if (invitationsEditing.includes(invitation.id)) {
       return (
         <CreateInvitation

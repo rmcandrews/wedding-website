@@ -6,18 +6,21 @@ import "./NameForm.css";
 
 const firstNameError = {
   content: "Please enter your first name",
-  pointing: "below"
+  pointing: "below",
 };
 
 const lastNameError = {
   content: "Please enter your last name",
-  pointing: "below"
+  pointing: "below",
 };
 
+// const apiHost =
+//   process.env.NODE_ENV === "development"
+//     ? "http://localhost:3001"
+//     : "https://fngvfv45l9.execute-api.us-east-1.amazonaws.com/production";
+
 const apiHost =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:3001"
-    : "https://fngvfv45l9.execute-api.us-east-1.amazonaws.com/production";
+  "https://fngvfv45l9.execute-api.us-east-1.amazonaws.com/production";
 
 class NameForm extends Component {
   state = {
@@ -29,7 +32,7 @@ class NameForm extends Component {
     lastNameMissing: false,
     loading: false,
     error: false,
-    warning: false
+    warning: false,
   };
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value });
@@ -40,7 +43,7 @@ class NameForm extends Component {
       firstNameMissing: !firstName,
       lastNameMissing: !lastName,
       error: false,
-      warning: false
+      warning: false,
     });
     if (firstName && lastName) {
       this.setState({ loading: true });
@@ -70,7 +73,7 @@ class NameForm extends Component {
       lastNameMissing,
       loading,
       error,
-      warning
+      warning,
     } = this.state;
 
     return (
@@ -112,7 +115,7 @@ class NameForm extends Component {
             list={[
               "Try a different name",
               "Try a name of someone else in your party",
-              "Contact Ryan or Taya"
+              "Contact Ryan or Taya",
             ]}
           />
           <Form.Button color="black" content="Search" fluid />

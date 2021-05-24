@@ -10,7 +10,7 @@ import {
   Select,
   CardContent,
   Icon,
-  Input
+  Input,
 } from "semantic-ui-react";
 import Modal from "react-responsive-modal";
 import { FaUtensils, FaCalendarDay } from "react-icons/fa";
@@ -23,10 +23,13 @@ import clonedeep from "lodash.clonedeep";
 import "./RsvpForm.css";
 import "react-semantic-toasts/styles/react-semantic-alert.css";
 
+// const apiHost =
+//   process.env.NODE_ENV === "development"
+//     ? "http://localhost:3001"
+//     : "https://fngvfv45l9.execute-api.us-east-1.amazonaws.com/production";
+
 const apiHost =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:3001"
-    : "https://fngvfv45l9.execute-api.us-east-1.amazonaws.com/production";
+  "https://fngvfv45l9.execute-api.us-east-1.amazonaws.com/production";
 
 const mealOptions = [
   {
@@ -36,7 +39,7 @@ const mealOptions = [
       <span>
         Beef <span className="entreeDescriptor">• Herb Crusted Tenderloin</span>
       </span>
-    )
+    ),
   },
   {
     key: "Fish",
@@ -45,7 +48,7 @@ const mealOptions = [
       <span>
         Fish <span className="entreeDescriptor">• Miso-Glazed Black Cod</span>
       </span>
-    )
+    ),
   },
   {
     key: "Veggie",
@@ -55,9 +58,9 @@ const mealOptions = [
         Veggie{" "}
         <span className="entreeDescriptor">• Black Truffle Strigoli</span>
       </span>
-    )
+    ),
   },
-  { key: "Kid", value: "Kid", text: "Kid" }
+  { key: "Kid", value: "Kid", text: "Kid" },
 ];
 
 const RsvpGuest = ({ guest, onUpdateGuest, previousGuest, index }) => {
@@ -76,7 +79,19 @@ const RsvpGuest = ({ guest, onUpdateGuest, previousGuest, index }) => {
     <Card fluid>
       <CardContent>
         <Card.Header>
-          <div className="guestCardTitle">{`${guest.firstName} ${guest.lastName}`}</div>
+          {!guest.isUnknownGuest && (
+            <div className="guestCardTitle">{`${guest.firstName} ${guest.lastName}`}</div>
+          )}
+          {guest.isUnknownGuest && (
+            <div style={{ textAlign: "center" }}>
+              <Input
+                placeholder={guest.name || "Guest Name"}
+                onBlur={({ target }) => {
+                  onUpdateGuest(guest.id, { name: target.value }, resetLoading);
+                }}
+              />
+            </div>
+          )}
         </Card.Header>
       </CardContent>
       <Card.Content extra className="cardContent">
@@ -213,10 +228,8 @@ const RsvpForm = ({ selectedInvitation, history }) => {
   const [buttonSuccessOpacity, setButtonSuccessOpacity] = useState(0);
   const [buttonSaveOpacity, setButtonSaveOpacity] = useState(1);
   const [buttonProgressOpacity, setButtonProgressOpacity] = useState(0);
-  const [
-    hasAtLeastOneRehersalInvite,
-    setHasAtLeastOneRehersalInvite
-  ] = useState(false);
+  const [hasAtLeastOneRehersalInvite, setHasAtLeastOneRehersalInvite] =
+    useState(false);
   const [menuModalOpen, setMenuModalOpen] = useState(false);
   const [detailsModalOpen, setDetailsModalOpen] = useState(false);
 
@@ -255,7 +268,7 @@ const RsvpForm = ({ selectedInvitation, history }) => {
     let originalInvitation = clonedeep(invitation);
     let updatedInvitation = clonedeep(invitation);
     const guestIndex = updatedInvitation.guests.findIndex(
-      guest => guest.id === id
+      (guest) => guest.id === id
     );
     for (let [key, value] of Object.entries(updatedFields)) {
       updatedInvitation.guests[guestIndex][key] = value;
@@ -274,7 +287,7 @@ const RsvpForm = ({ selectedInvitation, history }) => {
         title: "Error",
         description: "There was an issue updating your RSVP.",
         animation: "zoom",
-        time: 5000
+        time: 5000,
       });
     }
     callback();
@@ -300,12 +313,12 @@ const RsvpForm = ({ selectedInvitation, history }) => {
         title: "Error",
         description: "There was an issue updating your RSVP.",
         animation: "zoom",
-        time: 5000
+        time: 5000,
       });
     }
   };
 
-  const onEmailChange = event => {
+  const onEmailChange = (event) => {
     let invitationToUpdate = clonedeep(invitation);
     invitationToUpdate.email = event.target.value;
     setInvitation(invitationToUpdate);
@@ -428,7 +441,7 @@ const RsvpForm = ({ selectedInvitation, history }) => {
               style={{
                 top: 1,
                 opacity: buttonProgressOpacity,
-                transform: `scale(${buttonProgressOpacity})`
+                transform: `scale(${buttonProgressOpacity})`,
               }}
             >
               <Icon loading name="circle notch" size="large" />
@@ -437,7 +450,7 @@ const RsvpForm = ({ selectedInvitation, history }) => {
               className="saveButtonText saveButtonContentItem"
               style={{
                 opacity: buttonSaveOpacity,
-                transform: `scale(${buttonSaveOpacity})`
+                transform: `scale(${buttonSaveOpacity})`,
               }}
             >
               Save
@@ -447,7 +460,7 @@ const RsvpForm = ({ selectedInvitation, history }) => {
               style={{
                 top: 1,
                 opacity: buttonSuccessOpacity,
-                transform: `scale(${buttonSuccessOpacity})`
+                transform: `scale(${buttonSuccessOpacity})`,
               }}
             >
               <Icon size="large" name="heart outline" />

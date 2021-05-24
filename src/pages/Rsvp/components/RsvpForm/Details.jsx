@@ -13,7 +13,7 @@ const Details = ({ showRehersal }) => {
               fontWeight: 400,
             }}
           >
-            Friday July 24th, 7:00 PM
+            Friday July 16th, 7:00 PM
           </div>
           <div
             style={{
