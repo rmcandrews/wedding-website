@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { FaAngleDown } from "react-icons/fa";
-import { Button } from "../../components";
 import { Footer } from "../../components";
 import { Parallax } from "react-parallax";
 
@@ -181,40 +180,20 @@ function LocationPage() {
               <div style={detailTitleStyle}>THE GWEN</div>
               <div style={detailContentStyle} css={detailContentCss}>
                 The Gwen is located on Chicago's Michigan Avenue. The bride and
-                groom will be staying here. We have blocked room available
-                Thursday through Monday at $259 a night. The block expires on
-                June 24th. To book call the hotel at{" "}
+                groom will be staying here.{" "}
+                <i>The block we reserved has expired</i> but if you call{" "}
                 <a
                   href="tel:312-645-1500"
                   style={{ color: "#e8ca6f", fontWeight: 400 }}
                 >
                   312&#8209;645&#8209;1500
                 </a>{" "}
-                and mention the{" "}
+                and mention that you are with the{" "}
                 <span style={{ fontWeight: 400 }}>
-                  Lyskanycz/McAndrews Wedding Block
+                  Lyskanycz/McAndrews Wedding
                 </span>{" "}
-                or book online using the link below.
-              </div>
-              <div
-                style={{
-                  lineHeight: 2.5,
-                  color: "#e8ca6f",
-                  marginTop: 10,
-                  fontSize: "1.25rem",
-                }}
-              >
-                <Button
-                  id="Book-Gwen-click"
-                  onClick={() => {
-                    window.open(
-                      "https://www.marriott.com/event-reservations/reservation-link.mi?id=1617729566302&key=GRP&app=resvlink",
-                      "blank"
-                    );
-                  }}
-                >
-                  BOOK ONLINE
-                </Button>
+                you might still be able to get the block rate at $259 a night.
+                At the very least they will know you are with the wedding.
               </div>
             </div>
             <div css={detailContainerCss}>
