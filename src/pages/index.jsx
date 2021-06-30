@@ -4,6 +4,7 @@ import { RegistryPage } from "./Registry";
 import { GalleryPage } from "./Gallery";
 import { RsvpPage } from "./Rsvp";
 import { AdminPage } from "./Admin";
+import TimelinePage from "./Timeline/Timeline";
 
 export {
   WeddingPage,
@@ -11,5 +12,6 @@ export {
   RegistryPage,
   GalleryPage,
   RsvpPage,
-  AdminPage
+  AdminPage,
+  TimelinePage,
 };

@@ -82,17 +82,6 @@ function Header({ history }) {
               </ul>
             </nav>
           </div>
-          <Button
-            css={{ display: ["none", "none", "inline-block"] }}
-            style={{ float: "right", marginTop: -8 }}
-            type="fill"
-            size="small"
-            color="#e8ca6f"
-            hoverColor="#e8ca6f"
-            onClick={() => history.push("/rsvp")}
-          >
-            RSVP
-          </Button>
           <MorphIcon
             style={{
               position: "fixed",
@@ -181,7 +170,7 @@ function Header({ history }) {
                         REGISTRY
                       </Link>
                     </li>
-                    <li
+                    {/* <li
                       className="menu-list-item"
                       style={{ animationDelay: "0.3s" }}
                     >
@@ -191,12 +180,12 @@ function Header({ history }) {
                         hoverColor="#e8ca6f"
                         onClick={() => {
                           setMenuOpen(false);
-                          history.push("/rsvp");
+                          history.push("/timeline");
                         }}
                       >
-                        RSVP
+                        SCHEDULE
                       </Button>
-                    </li>
+                    </li> */}
                   </ul>
                 </nav>
               </div>

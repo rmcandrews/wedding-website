@@ -15,6 +15,7 @@ import {
   GalleryPage,
   RsvpPage,
   AdminPage,
+  TimelinePage,
 } from "./pages";
 
 let loadScreenOpacityTracker = 1;
@@ -69,6 +70,7 @@ function App() {
         <Route path="/gallery" component={GalleryPage} />
         <Route path="/rsvp" component={RsvpPage} />
         <Route path="/admin" component={AdminPage} />
+        <Route path="/timeline" component={TimelinePage} />
       </ThemeProvider>
       <audio id="tbabit" src={tbabit} preload="auto" loop />
     </Router>

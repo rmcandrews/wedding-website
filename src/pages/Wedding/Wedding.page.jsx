@@ -3,14 +3,12 @@ import { jsx } from "theme-ui";
 import { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { Button, Countdown, Footer } from "../../components";
-import { FaMap, FaBus } from "react-icons/fa";
+import { FaMap } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
 import { isMobile } from "react-device-detect";
 import { Parallax } from "react-parallax";
 
 import coverImage from "./cover.jpg";
-import ShuttleDetails from "./ShuttleDetails/ShuttleDetails";
-import Modal from "react-responsive-modal";
 
 const detailContainerCss = {
   display: "inline-block",
@@ -35,7 +33,6 @@ const detailContentCss = {
 };
 
 function WeddingPage({ history }) {
-  const [shuttleDetailsModalOpen, setShuttleDetailsModalOpen] = useState(false);
   let mapAndUberLinkTarget = !isMobile ? "_blank" : "_self";
 
   return (
@@ -69,15 +66,7 @@ function WeddingPage({ history }) {
             >
               DATE CHANGED!
             </div> */}
-            <Button
-              type="fill"
-              size="large"
-              color="#e8ca6f"
-              hoverColor="#e8ca6f"
-              onClick={() => history.push("/rsvp")}
-            >
-              RSVP
-            </Button>
+            {/* <Button onClick={() => history.push("/timeline")}>SCHEDULE</Button> */}
             <Countdown />
             <div
               style={{
@@ -255,13 +244,6 @@ function WeddingPage({ history }) {
           >
             <FaMap /> MAP
           </Button>
-          <Button
-            id="Queen_of_All_Saints_Shuttle-click"
-            onClick={() => setShuttleDetailsModalOpen(true)}
-            style={{ marginLeft: 5 }}
-          >
-            <FaBus style={{ fontSize: 12 }} /> SHUTTLE
-          </Button>
         </div>
       </section>
       <Parallax
@@ -353,21 +335,7 @@ function WeddingPage({ history }) {
           >
             <FaMap style={{ fontSize: 12 }} /> MAP
           </Button>
-          <Button
-            id="City_Hall_Shuttle-click"
-            onClick={() => setShuttleDetailsModalOpen(true)}
-            style={{ marginLeft: 5 }}
-          >
-            <FaBus style={{ fontSize: 12 }} /> SHUTTLE
-          </Button>
         </div>
-        <Modal
-          open={shuttleDetailsModalOpen}
-          onClose={() => setShuttleDetailsModalOpen(false)}
-          center
-        >
-          <ShuttleDetails />
-        </Modal>
       </section>
       <Footer />
     </div>
