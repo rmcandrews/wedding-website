@@ -21,45 +21,26 @@ const items = [
     description: "After the ceremony the shuttles will return to the hotel.",
   },
   {
-    time: "",
-    title: "Break",
+    time: "4:45pm",
+    title: "Shuttles Arrive back at hotel and begin shuttle service",
     description: (
       <span>
-        In the downtime before cocktail hour feel free to go back to your room
-        to freshen up or get the party started early. The hotel has a lovely{" "}
+        When the busses arrive back at the hotel they will immidieatly begin a
+        shuttle service between the hotel and the reception venue. For those of
+        you who want to get a head start at the{" "}
+        <a href="https://www.chicagoinrecess.com/" style={{ color: "#e8ca6f" }}>
+          bar associated with the venue
+        </a>
+        , you can catch an early shuttle. The hotel also has a lovely{" "}
         <a
           href="https://www.thegwenchicago.com/dining/upstairs-at-the-gwen/"
           style={{ color: "#e8ca6f" }}
         >
           rooftop bar
         </a>{" "}
-        or you can head over early and drink at the{" "}
-        <a href="https://www.chicagoinrecess.com/" style={{ color: "#e8ca6f" }}>
-          bar associated with the venue
-        </a>
-        .
+        if you prefer that. For those of you that need a power nap, the last
+        shuttle will depart from the hotel at 6:30.
       </span>
-    ),
-  },
-  {
-    time: "5:10pm",
-    title: "Shuttles #1 Departs to the venue",
-    description: (
-      <span>
-        For those of you who want to drink at the{" "}
-        <a href="https://www.chicagoinrecess.com/" style={{ color: "#e8ca6f" }}>
-          bar associated with the venue
-        </a>{" "}
-        a shuttle will take you from the hotel to the reception venue a little
-        early.
-      </span>
-    ),
-  },
-  {
-    time: "5:50pm",
-    title: "Shuttles #2 Departs to the venue",
-    description: (
-      <span>Will arrive at the venue for the beggining of cocktail hour.</span>
     ),
   },
   {
@@ -91,19 +72,45 @@ const items = [
     description: <span></span>,
   },
   {
+    time: "6:30pm",
+    title: "Evening Shuttle Service Ends",
+    description: (
+      <span>
+        The shuttle service between the hotel and the venue will pause
+        temporarily. This is the estimated time of the last shuttle leaving the
+        hotel.
+      </span>
+    ),
+  },
+  {
     time: "7:00pm",
     title: "Dinner",
     description: <span></span>,
   },
   {
-    time: "10:00p",
-    title: "Shuttle service",
+    time: "9:30pm",
+    title: "Night Shuttle Service Begins",
     description: (
       <span>
         A small shuttle will start to run between the reception venue and hotel.
         Shuttle service will end at 12:15am
       </span>
     ),
+  },
+  {
+    time: "12:00a",
+    title: "Reception Ends",
+    description: "",
+  },
+  {
+    time: "12:00a",
+    title: "After Party Begins?",
+    description: "",
+  },
+  {
+    time: "12:30a",
+    title: "Night Shuttle Service Ends",
+    description: "",
   },
 ];
 
