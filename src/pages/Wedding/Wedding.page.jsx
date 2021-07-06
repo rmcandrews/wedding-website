@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { Button, Countdown, Footer } from "../../components";
 import { FaMap } from "react-icons/fa";
@@ -66,7 +65,7 @@ function WeddingPage({ history }) {
             >
               DATE CHANGED!
             </div> */}
-            {/* <Button onClick={() => history.push("/timeline")}>SCHEDULE</Button> */}
+            <Button onClick={() => history.push("/timeline")}>SCHEDULE</Button>
             <Countdown />
             <div
               style={{

@@ -170,7 +170,7 @@ function Header({ history }) {
                         REGISTRY
                       </Link>
                     </li>
-                    {/* <li
+                    <li
                       className="menu-list-item"
                       style={{ animationDelay: "0.3s" }}
                     >
@@ -185,7 +185,7 @@ function Header({ history }) {
                       >
                         SCHEDULE
                       </Button>
-                    </li> */}
+                    </li>
                   </ul>
                 </nav>
               </div>
