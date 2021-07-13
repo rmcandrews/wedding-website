@@ -4,7 +4,7 @@ import { Footer } from "../../components/Footer";
 
 const items = [
   {
-    time: "Friday 7:00p",
+    time: "Friday 7:00pm",
     title: "Rehearsal Dinner",
     description: "Homeslice -  938 W Webster Ave, Chicago, IL",
   },
@@ -118,7 +118,7 @@ const items = [
     description: "",
   },
   {
-    time: "Sunday 9:00a",
+    time: "Sunday 9:00am",
     title: "Brunch",
     description:
       "For those of you staying at The Gwen or nearby, join us for a complimentary brunch from 9 to noon at The Gwen.",
