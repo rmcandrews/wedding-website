@@ -9,7 +9,7 @@ const items = [
     description: "Homeslice -  938 W Webster Ave, Chicago, IL",
   },
   {
-    time: "1:45pm",
+    time: "Saturday 1:45pm",
     title: "Shuttles Depart for Ceremony",
     description:
       "Please be in the lobby of The Gwen Hotel by 1:40pm to catch the shuttles to the venue.",
