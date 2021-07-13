@@ -112,6 +112,12 @@ const items = [
     title: "Night Shuttle Service Ends",
     description: "",
   },
+  {
+    time: "Sunday 9:00a",
+    title: "Brunch",
+    description:
+      "For those of you staying at The Gwen or nearby, join us for a complimentary brunch from 9 to noon at The Gwen.",
+  },
 ];
 
 function TimelinePage() {
