@@ -4,6 +4,11 @@ import { Footer } from "../../components/Footer";
 
 const items = [
   {
+    time: "Friday 7:00p",
+    title: "Rehearsal Dinner",
+    description: "Homeslice -  938 W Webster Ave, Chicago, IL",
+  },
+  {
     time: "1:45pm",
     title: "Shuttles Depart for Ceremony",
     description:
