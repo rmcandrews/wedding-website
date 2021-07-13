@@ -121,7 +121,7 @@ const items = [
     time: "Sunday 9:00am",
     title: "Brunch",
     description:
-      "For those of you staying at The Gwen or nearby, join us for a complimentary brunch from 9 to noon at The Gwen.",
+      "Come send the bride and groom off and join us for a boozy brunch from 9-12 in the Grand Salon room at the Gwen. All are welcome who are staying at the Gwen or nearby.",
   },
 ];
 
