@@ -12,7 +12,7 @@ const items = [
     time: "Saturday 1:45pm",
     title: "Shuttles Depart for Ceremony",
     description:
-      "Please be in the lobby of The Gwen Hotel by 1:40pm to catch the shuttles to the venue.",
+      "Please be in the lobby of The Gwen Hotel by 1:40pm to catch the shuttles to the venue. There are multiple weddings staying at The Gwen this weekend so take care to not get on the wrong shuttle!",
   },
   {
     time: "3:00pm",
